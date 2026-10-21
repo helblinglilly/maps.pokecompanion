@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 5000 5000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Routes">
+        <g id="kanto-route-25" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M3547.78,858.476L3146.62,858.476" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-24" transform="matrix(1.22217,0,0,1.1839,-442.636,-770.087)">
+            <path d="M3146.62,1233.61L3146.62,849.135" style="fill:none;stroke:black;stroke-width:34.63px;"/>
+        </g>
+        <g id="kanto-route-23" transform="matrix(1.22217,0,0,1.15837,-442.636,-650.529)">
+            <path d="M693,1770.12L693,2834.93" style="fill:none;stroke:black;stroke-width:34.99px;"/>
+        </g>
+        <g id="kanto-route-22" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M1065.97,2834.93L693,2834.93" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-sea-route-21" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M1180.97,3701.53L1180.97,4449.99" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-sea-route-20" transform="matrix(1.00844,0,0,1.00118,-887.183,163.257)">
+            <path d="M2007.94,4569.88L2659.93,4569.88" style="fill:none;stroke:black;stroke-width:41.47px;"/>
+        </g>
+        <g id="kanto-sea-route-19" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M2654.71,4195.16L2654.71,4569.88L2007.94,4569.88" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-18" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M2045.84,4082.33L2539.71,4082.33" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-17" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M1679.27,2092.69L1679.27,4082.33L2045.84,4082.33" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-16" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M2294.77,2092.69L1679.27,2092.69" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-15" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M3402.85,4096.98L2769.71,4096.98" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-14" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M3402.85,3601.02L3402.85,4096.98" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-13" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M4122.43,3601.02L3402.85,3601.02" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-12" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M4122.43,2207.69L4122.43,3601.02" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-11" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M3261.62,3087.22L4122.43,3087.22" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-10" transform="matrix(1.22217,0,0,1.47655,-442.636,-1326.92)">
+            <path d="M4122.43,1977.69L4122.43,1679.46" style="fill:none;stroke:black;stroke-width:30.74px;"/>
+        </g>
+        <path id="kanto-route-9" d="M3542.52,830.375L4488.17,830.375" style="fill:none;stroke:black;stroke-width:34.72px;"/>
+        <g id="kanto-route-8" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M3261.62,2092.69L4007.43,2092.69" style="fill:none;stroke:black;stroke-width:34.22px;stroke-linecap:butt;"/>
+        </g>
+        <g id="kanto-route-7" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M2524.77,2092.69L3031.62,2092.69" style="fill:none;stroke:black;stroke-width:34.22px;stroke-linecap:butt;"/>
+        </g>
+        <g id="kanto-route-6" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M3146.62,2207.69L3146.62,2972.22" style="fill:none;stroke:black;stroke-width:34.22px;stroke-linecap:butt;"/>
+        </g>
+        <g id="kanto-route-5" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M3146.62,1977.69L3146.62,1463.61" style="fill:none;stroke:black;stroke-width:34.22px;stroke-linecap:butt;"/>
+        </g>
+        <g id="kanto-route-4" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M3031.62,1348.61L2256.14,1348.61" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-3" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M1294.97,1591L1902.22,1591L1902.22,1349L2079.23,1349" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+        <g id="kanto-route-2" transform="matrix(1.22217,0,0,1.29635,-442.636,-1032.14)">
+            <path d="M1180.97,2719.93L1180.97,1947.04" style="fill:none;stroke:black;stroke-width:33.07px;"/>
+        </g>
+        <g id="kanto-route-1" transform="matrix(1.22217,0,0,1.21338,-442.636,-806.453)">
+            <path d="M1180.97,2949.93L1180.97,3471.53" style="fill:none;stroke:black;stroke-width:34.22px;"/>
+        </g>
+    </g>
+    <g id="Cities">
+        <g id="indigo-plateau" transform="matrix(1.21261,0,0,1.27429,-435.161,-887.584)">
+            <rect x="576.391" y="1238.68" width="230.906" height="219.731" style="fill:rgb(169,124,82);"/>
+        </g>
+        <g id="pewter-city" transform="matrix(1.21261,0,0,1.27429,159.994,-593.947)">
+            <rect x="576.391" y="1238.68" width="230.906" height="219.731" style="fill:rgb(169,124,82);"/>
+        </g>
+        <g id="viridian-city" transform="matrix(1.21261,0,0,1.27429,161.216,915.409)">
+            <rect x="576.391" y="1238.68" width="230.906" height="219.731" style="fill:rgb(169,124,82);"/>
+        </g>
+        <g id="pallet-town" transform="matrix(1.21261,0,0,1.27429,161.216,1827.38)">
+            <rect x="576.391" y="1238.68" width="230.906" height="219.731" style="fill:rgb(169,124,82);"/>
+        </g>
+        <g id="celadon-city" transform="matrix(1.21261,0,0,1.27429,1663.02,14.7909)">
+            <rect x="576.391" y="1238.68" width="230.906" height="219.731" style="fill:rgb(169,124,82);"/>
+        </g>
+        <g id="cinnabar-island" transform="matrix(1.21261,0,0,1.27429,159.994,3014.62)">
+            <rect x="576.391" y="1238.68" width="230.906" height="219.731" style="fill:rgb(169,124,82);"/>
+        </g>
+        <g id="fuchsia-city" transform="matrix(1.21261,0,0,1.27008,1962.38,2431.55)">
+            <rect x="576.391" y="1238.68" width="230.906" height="219.731" style="fill:rgb(169,124,82);"/>
+        </g>
+        <g id="vermillion-city" transform="matrix(1.21261,0,0,1.27429,2563.58,1217.55)">
+            <rect x="576.391" y="1238.68" width="230.906" height="219.731" style="fill:rgb(169,124,82);"/>
+        </g>
+        <g id="saffron-city" transform="matrix(1.21261,0,0,1.27429,2563.58,14.7909)">
+            <rect x="576.391" y="1238.68" width="230.906" height="219.731" style="fill:rgb(169,124,82);"/>
+        </g>
+        <g id="lavender-town" transform="matrix(1.21261,0,0,1.27429,3756.18,14.7909)">
+            <rect x="576.391" y="1238.68" width="230.906" height="219.731" style="fill:rgb(169,124,82);"/>
+        </g>
+        <g id="cerulean-city" transform="matrix(1.21261,0,0,1.27429,2563.58,-888.06)">
+            <rect x="576.391" y="1238.68" width="230.906" height="219.731" style="fill:rgb(169,124,82);"/>
+        </g>
+    </g>
+    <g id="Points-of-Interest" serif:id="Points of Interest">
+        <g id="kanto-victory-road-2" transform="matrix(1.21525,0,0,1.21525,-542.898,-1256.94)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="kanto-victory-road-1" transform="matrix(1.21525,0,0,1.21525,-542.898,-1041.94)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="viridian-forest" transform="matrix(1.21525,0,0,1.21525,52.2569,-965.318)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="digletts-cave" transform="matrix(1.21525,0,0,1.21525,267.257,-965.318)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="mt-moon" transform="matrix(1.21525,0,0,1.21525,1259.42,-1503.81)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="seafoam-islands" transform="matrix(1.21525,0,0,1.21525,956.074,2404.33)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="pokemon-mansion" transform="matrix(1.21525,0,0,1.21525,-195.18,2398.69)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="kanto-safari-zone" transform="matrix(1.21525,0,0,1.21525,1862.16,1563.24)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="ss-anne" transform="matrix(1.21525,0,0,1.21525,2455.91,849.116)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="rock-tunnel" transform="matrix(1.21525,0,0,1.21525,3649.06,-1503.99)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="kanto-power-plant" transform="matrix(1.21525,0,0,1.21525,3649.06,-1288.99)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="pokemon-tower" transform="matrix(1.21525,0,0,1.21525,3896.01,-601.14)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="bills-house" transform="matrix(1.21525,0,0,1.21525,3054.25,-2099)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+        <g id="cerulean-cave" transform="matrix(1.21525,0,0,1.21525,2208.41,-1643.99)">
+            <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(255,4,4);"/>
+        </g>
+    </g>
+</svg>
