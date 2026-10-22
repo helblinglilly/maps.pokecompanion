@@ -1,11 +1,13 @@
-# vinext app
+# maps.pokecompanion
 
-This project was created with create-vinext-app.
+Schemantic SVG files that map different Pokémon regions, using identifiers that correlate to PokéAPI.
 
-## Scripts
+## Assets
 
-- `pnpm run dev` starts the vinext dev server.
-- `pnpm run build` builds the Cloudflare Worker output.
-- `pnpm run start` previews the built Worker locally.
-- `pnpm run deploy` deploys the Cloudflare Worker.
+Refer to the assets subfolder. The files were created with Affinity Designer 2 and can be modified.
 
+The SVGs are their outputs (to be moved to CD and nicely bundled up).
+
+## App
+
+A demo of the Maps in use can be found at [maps.pokecompanion.com](https://maps.pokecompanion.com)
