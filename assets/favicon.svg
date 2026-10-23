@@ -27,8 +27,8 @@
             <g transform="matrix(0.862961,-0.34447,0.102349,0.256404,-20.3525,263.269)">
                 <path d="M106.609,286.242L179.682,286.242L179.682,314.315L103.279,314.315L106.609,286.242Z" style="fill:rgb(206,158,59);"/>
             </g>
-            <g>
-                <g transform="matrix(0.839208,-0.398864,0.118511,0.249346,96.6621,246.516)">
+            <g transform="matrix(0.839208,-0.398864,0.118511,0.249346,96.6621,246.516)">
+                <g>
                     <path d="M174.983,302.854C148.001,310.625 122.927,313.356 100.328,312.508C100.6,303.283 100.871,294.057 101.143,284.832C133.787,281.552 162.014,271.524 180.711,263.57C178.801,276.665 176.892,289.759 174.983,302.854Z" style="fill:rgb(206,158,59);"/>
                 </g>
             </g>
@@ -46,14 +46,16 @@
             <path d="M196.245,324.994L193.787,291.704L213.75,243.391L188.597,214.543L196.082,177.851" style="fill:none;stroke:rgb(77,95,249);stroke-width:5.48px;"/>
         </g>
         <g id="Container" transform="matrix(0.853213,0,0,0.853213,-57.8213,-61.6388)">
-            <path id="Outline" d="M100.944,165.834L100.944,343.811L161.418,320.453L220.67,328.632L279.708,343.811L279.708,159.151L220.569,179.633L160.714,173.986L100.944,165.834Z" style="fill:none;stroke:black;stroke-width:3px;stroke-linecap:round;"/>
-            <path id="Left-Bend" serif:id="Left Bend" d="M162.271,320.586L162.271,174.455" style="fill:none;stroke:rgb(1,1,1);stroke-opacity:0.5;stroke-width:3px;stroke-linecap:round;"/>
-            <path id="Right-Bend" serif:id="Right Bend" d="M221.18,179.491L221.18,328.305" style="fill:none;stroke:rgb(1,1,1);stroke-opacity:0.5;stroke-width:3px;stroke-linecap:round;"/>
+            <path id="Outline" d="M100.944,165.834L100.944,343.811L161.418,320.453L220.67,328.632L279.708,343.811L279.708,159.151L220.569,179.633L160.714,173.986L100.944,165.834Z" style="fill:none;stroke:black;stroke-width:18px;stroke-linecap:round;"/>
+            <path id="Left-Bend" serif:id="Left Bend" d="M162.271,320.586L162.271,174.455" style="fill:none;stroke:rgb(1,1,1);stroke-opacity:0.5;stroke-width:18px;stroke-linecap:round;"/>
+            <path id="Right-Bend" serif:id="Right Bend" d="M221.18,179.491L221.18,328.305" style="fill:none;stroke:rgb(1,1,1);stroke-opacity:0.5;stroke-width:18px;stroke-linecap:round;"/>
         </g>
-        <g id="Landmark" transform="matrix(0.853213,0,0,0.853213,-57.8213,-61.6388)">
-            <g transform="matrix(1,0,0,1,-10.8914,-16.5632)">
-                <g id="Landmark1" serif:id="Landmark">
-                    <path d="M260.891,202.158C271.517,200.565 280.165,207.92 280.165,218.542C280.165,229.164 271.516,239.113 260.891,240.706C250.266,242.3 241.617,234.945 241.617,224.323C241.617,213.701 250.267,203.752 260.891,202.158Z" style="fill:rgb(206,59,63);"/>
+        <g transform="matrix(0.853213,0,0,0.853213,-67.114,-75.7707)">
+            <g id="Landmark">
+                <g>
+                    <g id="Landmark1" serif:id="Landmark">
+                        <path d="M260.891,202.158C271.517,200.565 280.165,207.92 280.165,218.542C280.165,229.164 271.516,239.113 260.891,240.706C250.266,242.3 241.617,234.945 241.617,224.323C241.617,213.701 250.267,203.752 260.891,202.158Z" style="fill:rgb(206,59,63);"/>
+                    </g>
                 </g>
             </g>
         </g>
