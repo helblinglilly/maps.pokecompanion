@@ -9,7 +9,7 @@ it('hydrates server-rendered CSS with a leading newline without mismatches', asy
   const editor = <CssEditor value={defaultMapCss} onChange={() => {}} />;
   const container = document.createElement('div');
   container.innerHTML = renderToString(editor);
-  document.body.append(container);
+  document.body.appendChild(container);
   const onRecoverableError = vi.fn();
   let root: ReturnType<typeof hydrateRoot>;
   try {

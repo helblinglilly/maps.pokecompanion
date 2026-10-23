@@ -12,7 +12,7 @@
 		"vinext": "latest"
 	},
 	"devDependencies": {
-		"@cloudflare/vite-plugin": "beta",
+		"@cloudflare/vite-plugin": "^1.65.0",
 		"@tailwindcss/postcss": "latest",
 		"@testing-library/jest-dom": "^7.0.1",
 		"@testing-library/react": "^16.3.3",
@@ -27,7 +27,8 @@
 		"tailwindcss": "latest",
 		"typescript": "latest",
 		"vite": "8.3.0",
-		"vitest": "^5.0.5"
+		"vitest": "^5.0.5",
+		"wrangler": "^4.152.0"
 	},
 	"type": "module",
 	"scripts": {
@@ -37,10 +38,13 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"start": "vite preview",
-		"deploy": "vinext-cloudflare deploy",
+		"deploy": "wrangler deploy",
 		"preview": "npm run build && npm run start --",
-		"cf-typegen": "cf workers types",
+		"cf-typegen": "wrangler types",
 		"predev": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts",
-		"prebuild": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts"
+		"prebuild": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts",
+		"maps:catalog": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts",
+		"maps:completeness": "npm run maps:catalog && node scripts/build-completeness.ts",
+		"release:bundle": "node scripts/bundle-release.ts"
 	}
 }
