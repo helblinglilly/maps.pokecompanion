@@ -1,5 +1,6 @@
 import Link from "vinext/shims/link";
 import regions from "./lib/map-catalog.json";
+import { MapCompleteness } from "./components/MapCompleteness";
 
 export const dynamic = "force-static";
 
@@ -13,7 +14,7 @@ export default function Home() {
             <h2 className="text-xl font-semibold">{region.name}</h2>
             <div className="grid gap-4 pl-8">
               {region.groups.map((group) => (
-                <h3 key={group.slug}>
+                <h3 key={group.slug} className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                   {group.file ? (
                     <Link className="underline" href={`/${region.slug}/${group.slug}`}>
                       {group.name}
@@ -23,6 +24,7 @@ export default function Home() {
                       {group.name} — Missing map
                     </span>
                   )}
+                  <MapCompleteness regionSlug={region.slug} group={group} locations={region.locations} />
                 </h3>
               ))}
             </div>
