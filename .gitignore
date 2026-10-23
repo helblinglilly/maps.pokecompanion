@@ -13,3 +13,9 @@ next-env.d.ts
 !.env.example
 
 *.afdesign~lock~
+
+# Generated map assets and TypeScript cache
+/public/maps/
+*.tsbuildinfo
+
+app/lib/*.json
