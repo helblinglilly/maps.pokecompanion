@@ -1,7 +1,7 @@
 import { MapStyleWorkspace } from "../../components/MapStyleEditor";
 import { notFound } from "vinext/shims/navigation";
 import regions from "../../lib/map-catalog.json";
-import { LocationList } from "../../components/LocationList";
+import { GameLocationList } from "../../components/GameLocationList";
 import { MapRenderer } from "../../components/MapRenderer";
 
 export const dynamic = "force-static";
@@ -29,7 +29,7 @@ export default async function RegionMap({
   if (!region || !group?.file) notFound();
 
   return (
-    <MapStyleWorkspace sidebar={<LocationList regionName={region.name} ids={group.ids} locations={region.locations} />}>
+    <MapStyleWorkspace sidebar={<GameLocationList key={group.slug} regionSlug={region.slug} group={group} regionName={region.name} ids={group.ids} locations={region.locations} />}>
         <MapRenderer
           src={`/maps/${group.file}`}
           label={`${region.name} map for Pokémon ${group.name}`}

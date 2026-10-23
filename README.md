@@ -52,84 +52,94 @@ route folders need to be maintained.
 
 CI refreshes these badges from live PokeAPI data on pushes to `main` and daily.
 Each game comes from its region's `version_groups` and the group's `versions`.
-The score matches the UI: unique matched location IDs / all PokeAPI region
-locations. PokeAPI region locations span all games; these are regional coverage
-scores for each game's artwork, not a claim that every location exists in that game.
-Unknown SVG IDs are reported separately and do not increase the score. Missing maps
-score 0%; regions without API locations are marked as such instead of claiming 100%.
-See [the detailed report](reports/completeness.json) for missing locations and unknown IDs.
+The score matches the UI: unique matched applicable location IDs / applicable
+PokeAPI region locations. Both the web app and CI apply
+[`config/location-exclusions.json`](config/location-exclusions.json) to remove
+locations absent from the selected game. Unknown SVG IDs are reported separately
+and do not increase the score. Missing maps score 0%; games with no applicable
+locations are marked as such instead of claiming 100%.
+See [the detailed report](https://maps.pokecompanion.com/completeness/completeness.json) for missing locations and unknown IDs.
 API failures fail CI rather than publishing misleading scores. Low scores are informational.
 
 <!-- completeness:start -->
 
-| Region | Game | Map | Completeness |
+| Region | Version group | Map | Completeness |
 | --- | --- | --- | --- |
-| kanto | red | [region-1-red-blue-yellow.svg](assets/region-1-red-blue-yellow.svg) | ![red: 50%](reports/badges/kanto-red.svg) |
-| kanto | blue | [region-1-red-blue-yellow.svg](assets/region-1-red-blue-yellow.svg) | ![blue: 50%](reports/badges/kanto-blue.svg) |
-| kanto | yellow | [region-1-red-blue-yellow.svg](assets/region-1-red-blue-yellow.svg) | ![yellow: 50%](reports/badges/kanto-yellow.svg) |
-| kanto | gold | **Missing map** | ![gold: missing map](reports/badges/kanto-gold.svg) |
-| kanto | silver | **Missing map** | ![silver: missing map](reports/badges/kanto-silver.svg) |
-| kanto | crystal | **Missing map** | ![crystal: missing map](reports/badges/kanto-crystal.svg) |
-| kanto | firered | [region-1-firered-leafgreen.svg](assets/region-1-firered-leafgreen.svg) | ![firered: 81.3%](reports/badges/kanto-firered.svg) |
-| kanto | leafgreen | [region-1-firered-leafgreen.svg](assets/region-1-firered-leafgreen.svg) | ![leafgreen: 81.3%](reports/badges/kanto-leafgreen.svg) |
-| kanto | heartgold | **Missing map** | ![heartgold: missing map](reports/badges/kanto-heartgold.svg) |
-| kanto | soulsilver | **Missing map** | ![soulsilver: missing map](reports/badges/kanto-soulsilver.svg) |
-| kanto | lets-go-pikachu | **Missing map** | ![lets-go-pikachu: missing map](reports/badges/kanto-lets-go-pikachu.svg) |
-| kanto | lets-go-eevee | **Missing map** | ![lets-go-eevee: missing map](reports/badges/kanto-lets-go-eevee.svg) |
-| kanto | red-japan | **Missing map** | ![red-japan: missing map](reports/badges/kanto-red-japan.svg) |
-| kanto | green-japan | **Missing map** | ![green-japan: missing map](reports/badges/kanto-green-japan.svg) |
-| kanto | blue-japan | **Missing map** | ![blue-japan: missing map](reports/badges/kanto-blue-japan.svg) |
-| johto | gold | **Missing map** | ![gold: missing map](reports/badges/johto-gold.svg) |
-| johto | silver | **Missing map** | ![silver: missing map](reports/badges/johto-silver.svg) |
-| johto | crystal | **Missing map** | ![crystal: missing map](reports/badges/johto-crystal.svg) |
-| johto | heartgold | **Missing map** | ![heartgold: missing map](reports/badges/johto-heartgold.svg) |
-| johto | soulsilver | **Missing map** | ![soulsilver: missing map](reports/badges/johto-soulsilver.svg) |
-| hoenn | ruby | **Missing map** | ![ruby: missing map](reports/badges/hoenn-ruby.svg) |
-| hoenn | sapphire | **Missing map** | ![sapphire: missing map](reports/badges/hoenn-sapphire.svg) |
-| hoenn | emerald | **Missing map** | ![emerald: missing map](reports/badges/hoenn-emerald.svg) |
-| hoenn | omega-ruby | **Missing map** | ![omega-ruby: missing map](reports/badges/hoenn-omega-ruby.svg) |
-| hoenn | alpha-sapphire | **Missing map** | ![alpha-sapphire: missing map](reports/badges/hoenn-alpha-sapphire.svg) |
-| sinnoh | diamond | **Missing map** | ![diamond: missing map](reports/badges/sinnoh-diamond.svg) |
-| sinnoh | pearl | **Missing map** | ![pearl: missing map](reports/badges/sinnoh-pearl.svg) |
-| sinnoh | platinum | **Missing map** | ![platinum: missing map](reports/badges/sinnoh-platinum.svg) |
-| sinnoh | brilliant-diamond | **Missing map** | ![brilliant-diamond: missing map](reports/badges/sinnoh-brilliant-diamond.svg) |
-| sinnoh | shining-pearl | **Missing map** | ![shining-pearl: missing map](reports/badges/sinnoh-shining-pearl.svg) |
-| unova | black | **Missing map** | ![black: missing map](reports/badges/unova-black.svg) |
-| unova | white | **Missing map** | ![white: missing map](reports/badges/unova-white.svg) |
-| unova | black-2 | **Missing map** | ![black-2: missing map](reports/badges/unova-black-2.svg) |
-| unova | white-2 | **Missing map** | ![white-2: missing map](reports/badges/unova-white-2.svg) |
-| kalos | x | **Missing map** | ![x: missing map](reports/badges/kalos-x.svg) |
-| kalos | y | **Missing map** | ![y: missing map](reports/badges/kalos-y.svg) |
-| alola | sun | **Missing map** | ![sun: missing map](reports/badges/alola-sun.svg) |
-| alola | moon | **Missing map** | ![moon: missing map](reports/badges/alola-moon.svg) |
-| alola | ultra-sun | **Missing map** | ![ultra-sun: missing map](reports/badges/alola-ultra-sun.svg) |
-| alola | ultra-moon | **Missing map** | ![ultra-moon: missing map](reports/badges/alola-ultra-moon.svg) |
-| galar | sword | **Missing map** | ![sword: missing map](reports/badges/galar-sword.svg) |
-| galar | shield | **Missing map** | ![shield: missing map](reports/badges/galar-shield.svg) |
-| galar | the-isle-of-armor-sword | **Missing map** | ![the-isle-of-armor-sword: missing map](reports/badges/galar-the-isle-of-armor-sword.svg) |
-| galar | the-isle-of-armor-shield | **Missing map** | ![the-isle-of-armor-shield: missing map](reports/badges/galar-the-isle-of-armor-shield.svg) |
-| galar | the-crown-tundra-sword | **Missing map** | ![the-crown-tundra-sword: missing map](reports/badges/galar-the-crown-tundra-sword.svg) |
-| galar | the-crown-tundra-shield | **Missing map** | ![the-crown-tundra-shield: missing map](reports/badges/galar-the-crown-tundra-shield.svg) |
-| hisui | legends-arceus | **Missing map** | ![legends-arceus: missing map](reports/badges/hisui-legends-arceus.svg) |
-| paldea | scarlet | **Missing map** | ![scarlet: missing map](reports/badges/paldea-scarlet.svg) |
-| paldea | violet | **Missing map** | ![violet: missing map](reports/badges/paldea-violet.svg) |
-| paldea | the-teal-mask-scarlet | **Missing map** | ![the-teal-mask-scarlet: missing map](reports/badges/paldea-the-teal-mask-scarlet.svg) |
-| paldea | the-teal-mask-violet | **Missing map** | ![the-teal-mask-violet: missing map](reports/badges/paldea-the-teal-mask-violet.svg) |
-| paldea | the-indigo-disk-scarlet | **Missing map** | ![the-indigo-disk-scarlet: missing map](reports/badges/paldea-the-indigo-disk-scarlet.svg) |
-| paldea | the-indigo-disk-violet | **Missing map** | ![the-indigo-disk-violet: missing map](reports/badges/paldea-the-indigo-disk-violet.svg) |
+| kanto | red-blue | [region-1-red-blue-yellow.svg](assets/region-1-red-blue-yellow.svg) | ![red-blue completeness](https://maps.pokecompanion.com/completeness/kanto-red-blue.svg) |
+| kanto | yellow | [region-1-red-blue-yellow.svg](assets/region-1-red-blue-yellow.svg) | ![yellow completeness](https://maps.pokecompanion.com/completeness/kanto-yellow.svg) |
+| kanto | gold-silver | **Missing map** | ![gold-silver completeness](https://maps.pokecompanion.com/completeness/kanto-gold-silver.svg) |
+| kanto | crystal | **Missing map** | ![crystal completeness](https://maps.pokecompanion.com/completeness/kanto-crystal.svg) |
+| kanto | firered-leafgreen | [region-1-firered-leafgreen.svg](assets/region-1-firered-leafgreen.svg) | ![firered-leafgreen completeness](https://maps.pokecompanion.com/completeness/kanto-firered-leafgreen.svg) |
+| kanto | heartgold-soulsilver | **Missing map** | ![heartgold-soulsilver completeness](https://maps.pokecompanion.com/completeness/kanto-heartgold-soulsilver.svg) |
+| kanto | lets-go-pikachu-lets-go-eevee | **Missing map** | ![lets-go-pikachu-lets-go-eevee completeness](https://maps.pokecompanion.com/completeness/kanto-lets-go-pikachu-lets-go-eevee.svg) |
+| johto | gold-silver | **Missing map** | ![gold-silver completeness](https://maps.pokecompanion.com/completeness/johto-gold-silver.svg) |
+| johto | crystal | **Missing map** | ![crystal completeness](https://maps.pokecompanion.com/completeness/johto-crystal.svg) |
+| johto | heartgold-soulsilver | **Missing map** | ![heartgold-soulsilver completeness](https://maps.pokecompanion.com/completeness/johto-heartgold-soulsilver.svg) |
+| hoenn | ruby-sapphire | **Missing map** | ![ruby-sapphire completeness](https://maps.pokecompanion.com/completeness/hoenn-ruby-sapphire.svg) |
+| hoenn | emerald | **Missing map** | ![emerald completeness](https://maps.pokecompanion.com/completeness/hoenn-emerald.svg) |
+| hoenn | omega-ruby-alpha-sapphire | **Missing map** | ![omega-ruby-alpha-sapphire completeness](https://maps.pokecompanion.com/completeness/hoenn-omega-ruby-alpha-sapphire.svg) |
+| sinnoh | diamond-pearl | **Missing map** | ![diamond-pearl completeness](https://maps.pokecompanion.com/completeness/sinnoh-diamond-pearl.svg) |
+| sinnoh | platinum | **Missing map** | ![platinum completeness](https://maps.pokecompanion.com/completeness/sinnoh-platinum.svg) |
+| sinnoh | brilliant-diamond-shining-pearl | **Missing map** | ![brilliant-diamond-shining-pearl completeness](https://maps.pokecompanion.com/completeness/sinnoh-brilliant-diamond-shining-pearl.svg) |
+| unova | black-white | **Missing map** | ![black-white completeness](https://maps.pokecompanion.com/completeness/unova-black-white.svg) |
+| unova | black-2-white-2 | **Missing map** | ![black-2-white-2 completeness](https://maps.pokecompanion.com/completeness/unova-black-2-white-2.svg) |
+| kalos | x-y | **Missing map** | ![x-y completeness](https://maps.pokecompanion.com/completeness/kalos-x-y.svg) |
+| alola | sun-moon | **Missing map** | ![sun-moon completeness](https://maps.pokecompanion.com/completeness/alola-sun-moon.svg) |
+| alola | ultra-sun-ultra-moon | **Missing map** | ![ultra-sun-ultra-moon completeness](https://maps.pokecompanion.com/completeness/alola-ultra-sun-ultra-moon.svg) |
+| galar | sword-shield | **Missing map** | ![sword-shield completeness](https://maps.pokecompanion.com/completeness/galar-sword-shield.svg) |
+| galar | the-isle-of-armor | **Missing map** | ![the-isle-of-armor completeness](https://maps.pokecompanion.com/completeness/galar-the-isle-of-armor.svg) |
+| galar | the-crown-tundra | **Missing map** | ![the-crown-tundra completeness](https://maps.pokecompanion.com/completeness/galar-the-crown-tundra.svg) |
+| hisui | legends-arceus | **Missing map** | ![legends-arceus completeness](https://maps.pokecompanion.com/completeness/hisui-legends-arceus.svg) |
+| paldea | scarlet-violet | **Missing map** | ![scarlet-violet completeness](https://maps.pokecompanion.com/completeness/paldea-scarlet-violet.svg) |
+| paldea | the-teal-mask | **Missing map** | ![the-teal-mask completeness](https://maps.pokecompanion.com/completeness/paldea-the-teal-mask.svg) |
+| paldea | the-indigo-disk | **Missing map** | ![the-indigo-disk completeness](https://maps.pokecompanion.com/completeness/paldea-the-indigo-disk.svg) |
 
 <!-- completeness:end -->
+
+## Game-specific location exclusions
+
+Edit `config/location-exclusions.json` using PokeAPI region, location, and individual
+version names (such as `red`, not the version group `red-blue`). Each entry has:
+
+```json
+{
+  "region": "kanto",
+  "location": "one-island",
+  "games": ["red", "blue", "yellow"],
+  "reason": "One Island is part of the Sevii Islands, introduced in FireRed and LeafGreen.",
+  "reappearsIn": ["firered", "leafgreen"]
+}
+```
+
+The file starts with One Island as an example, based on its
+[Sevii Islands game appearances](https://bulbapedia.bulbagarden.net/wiki/Sevii_Islands);
+it is not a complete list of game differences. Add further exclusions explicitly.
+PokeAPI remains the source of location identities and region/game availability.
+Builds reject unknown regions, locations or games, empty reasons or game lists,
+duplicate rules for a location/game, and conflicting reappearance games.
+`reappearsIn` lists games where the location appears or returns; it does not
+implicitly exclude any other games.
+
+Map pages offer a game selector within their version group. Excluded locations
+are listed at the bottom with their reason and reappearance games, even when
+already drawn in the SVG. They are omitted from both matched and total counts
+and from the missing list. The CI JSON report includes the same exclusions and
+explanations per game. All other PokeAPI locations remain required by default.
 
 ## CI and deployment
 
 Pull requests and pushes to `main` run tests, type checking, a production build,
 and `npm run maps:completeness`. CI uploads the report and badges as artifacts.
-On `main`, the bot commits updated badges, report, and this README with `[skip ci]`.
-The repository must allow GitHub Actions write access to contents; branch rules
-must allow the bot's report commits. The daily run also detects PokeAPI changes.
+Badges and the JSON report are generated into ignored `public/completeness/` files
+on every app build, then served at `https://maps.pokecompanion.com/completeness/`.
+The README uses stable hosted URLs; no bot commits or repository write permission
+are needed. Run `npm run maps:readme` and commit the README when adding regions
+or version groups to refresh its table.
 
 Every push to `main` that passes CI deploys the built app using Wrangler and the
 `production` environment's `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` secrets.
+Daily scheduled runs and manual runs on `main` also deploy so hosted badges stay
+current with PokeAPI changes. Pull requests validate and upload artifacts only.
 `wrangler.jsonc` defines the Worker and custom domain; the Vite plugin generates
 its deployment config during the build.
 

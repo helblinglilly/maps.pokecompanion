@@ -19,3 +19,6 @@ next-env.d.ts
 *.tsbuildinfo
 
 app/lib/*.json
+
+# Completeness badges and reports are generated for the deployed app
+/public/completeness/

@@ -41,10 +41,11 @@
 		"deploy": "wrangler deploy",
 		"preview": "npm run build && npm run start --",
 		"cf-typegen": "wrangler types",
-		"predev": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts",
-		"prebuild": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts",
+		"predev": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts && node scripts/build-completeness.ts",
+		"prebuild": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts && node scripts/build-completeness.ts",
 		"maps:catalog": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts",
 		"maps:completeness": "npm run maps:catalog && node scripts/build-completeness.ts",
-		"release:bundle": "node scripts/bundle-release.ts"
+		"release:bundle": "node scripts/bundle-release.ts",
+		"maps:readme": "npm run maps:catalog && node scripts/build-completeness.ts --update-readme"
 	}
 }

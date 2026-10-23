@@ -15,7 +15,7 @@ await mkdir(staging, { recursive: true });
 const files = (await readdir(new URL('assets/', root))).filter(file => file.endsWith('.svg')).sort();
 if (!files.length) throw new Error('No SVG maps to release');
 for (const file of files) await copyFile(new URL(`assets/${file}`, root), new URL(file, staging));
-await copyFile(new URL('reports/completeness.json', root), new URL('dist/release/completeness.json', root));
+await copyFile(new URL('public/completeness/completeness.json', root), new URL('dist/release/completeness.json', root));
 await copyFile(new URL('RELEASE_NOTES.md', root), new URL('dist/release/RELEASE_NOTES.md', root));
 // zip is provided by the GitHub-hosted Ubuntu runner; keep orchestration in TypeScript.
 execFileSync('zip', ['-r', `../maps-${tag}.zip`, 'maps', 'completeness.json', 'RELEASE_NOTES.md'], { cwd: new URL('dist/release/', root), stdio: 'inherit' });

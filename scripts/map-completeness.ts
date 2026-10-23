@@ -1,13 +1,14 @@
+import type { LocationExclusion } from '../app/lib/location-exclusions.ts';
 import { validateMapIds, type RegionLocation } from '../app/lib/map-validation.ts';
 
-export function scoreMap(ids: string[], locations: RegionLocation[], hasMap: boolean) {
-  const { elements, missing } = validateMapIds([...new Set(ids)], locations);
-  const matched = locations.length - missing.length;
+export function scoreMap(ids: string[], locations: RegionLocation[], hasMap: boolean, exclusions: LocationExclusion[] = []) {
+  const { elements, missing, matched, total, percent, excluded } = validateMapIds(hasMap ? ids : [], locations, exclusions);
   return {
     matched,
-    total: locations.length,
-    percent: hasMap && locations.length ? Math.round(matched / locations.length * 1000) / 10 : 0,
-    status: !hasMap ? 'missing map' : !locations.length ? 'no API locations' : 'available',
+    total,
+    percent: hasMap ? percent : 0,
+    status: !hasMap ? 'missing map' : !total ? 'no applicable locations' : 'available',
+    excluded,
     missing: missing.map(location => location.name),
     unknown: elements.filter(element => !element.location).map(element => element.id),
   };

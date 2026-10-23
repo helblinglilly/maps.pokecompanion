@@ -1,20 +1,27 @@
 "use client";
 
+import { exclusionsForVersionGroup } from "../lib/location-exclusions";
+import { ExcludedLocations } from "./ExcludedLocations";
 import { validateMapIds, type RegionLocation } from "../lib/map-validation";
 import { useLocationSelection } from "../hooks/use-location-selection";
 
 export function LocationList({
   regionName,
+  regionSlug,
+  versionGroup,
+  versionGroupName,
   ids,
   locations,
 }: {
   regionName: string;
+  regionSlug: string;
+  versionGroup: string;
+  versionGroupName: string;
   ids: string[];
   locations: RegionLocation[];
 }) {
   const selection = useLocationSelection();
-  const { elements, missing } = validateMapIds(ids, locations);
-  const matched = elements.filter((element) => element.location).length;
+  const { elements, missing, matched, total, percent, excluded } = validateMapIds(ids, locations, exclusionsForVersionGroup(regionSlug, versionGroup));
   const sortedElements = [...elements].sort(
     (a, b) => Number(Boolean(a.location)) - Number(Boolean(b.location)),
   );
@@ -40,11 +47,11 @@ export function LocationList({
         {regionName} map elements
       </h1>
       <p className="mt-2 text-sm">
-        {matched} of {locations.length} region locations matched
+        {matched} of {total} applicable locations matched for Pokémon {versionGroupName}{total ? ` (${percent}%)` : " (no applicable locations)"}
       </p>
       <h2 className="mt-6 font-semibold">Missing from Map ({missing.length})</h2>
       <p className="mt-2 text-xs">
-        Elements that are present in PokeAPI but are missing from the map.
+        Applicable PokeAPI locations that are missing from the map.
       </p>
       <ul className="mt-3 space-y-2 text-sm text-amber-800">
         {missing.map((location) => (
@@ -59,7 +66,7 @@ export function LocationList({
       <h2 className="text-lg font-semibold">Map elements</h2>
 
       <p className="mt-2 text-xs text-[#52665e]">
-        Compared with PokeAPI. Region locations span all version groups.
+        Compared with PokeAPI, with documented exclusions for this version group.
       </p>
       <ul className="mt-4 space-y-3 text-sm">
         {sortedElements.map(({ id, location }) => (
@@ -98,7 +105,8 @@ export function LocationList({
 
       {!elements.length && <p className="mt-4 text-sm">No location SVG IDs found.</p>}
 
-      {!missing.length && <p className="mt-3 text-sm">All region locations are present.</p>}
+      {total > 0 && !missing.length && <p className="mt-3 text-sm">All applicable locations are present.</p>}
+      <ExcludedLocations locations={excluded} versionGroupName={versionGroupName} />
     </aside>
   );
 }

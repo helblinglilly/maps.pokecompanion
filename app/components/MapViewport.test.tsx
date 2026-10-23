@@ -20,7 +20,7 @@ it('toggles multiple locations, restores URL selection and clears all highlights
   });
   window.history.replaceState(null, '', '/?other=kept');
   const { container } = render(<>
-    <LocationList regionName="Kanto" ids={['green-path', 'sevault-canyon']} locations={[]} />
+    <LocationList regionSlug="kanto" versionGroup="red-blue" versionGroupName="Red / Blue" regionName="Kanto" ids={['green-path', 'sevault-canyon']} locations={[]} />
     <MapViewport><svg><path id="green-path" /><path id="sevault-canyon" /></svg></MapViewport>
   </>);
   fireEvent.click(screen.getByRole('checkbox', { name: 'green-path' }));
@@ -53,7 +53,7 @@ it('updates selection without navigation events or replacing the scrolling list'
   window.addEventListener('popstate', navigation);
   try {
     render(<>
-      <LocationList regionName="Kanto" ids={['green-path', 'sevault-canyon']} locations={[]} />
+      <LocationList regionSlug="kanto" versionGroup="red-blue" versionGroupName="Red / Blue" regionName="Kanto" ids={['green-path', 'sevault-canyon']} locations={[]} />
       <MapViewport><svg><path id="green-path" /><path id="sevault-canyon" /></svg></MapViewport>
     </>);
     const list = screen.getByRole('complementary');

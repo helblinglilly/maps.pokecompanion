@@ -1,0 +1,9 @@
+[
+  {
+    "region": "kanto",
+    "location": "one-island",
+    "versionGroups": ["red-blue", "yellow", "gold-silver", "crystal"],
+    "reason": "Sevii Islands - Gen 3",
+    "reappearsIn": ["firered-leafgreen"]
+  }
+]
