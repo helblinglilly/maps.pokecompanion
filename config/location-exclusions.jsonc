@@ -76,7 +76,13 @@
   },
   {
     "region": "unova",
-    "location": ["entree-forest"],
+    "location": [
+      "entree-forest", // Removed
+      "unova-route-10", // Destroyed
+      "cold-storage", // Became PWT
+      "unova-shopping-mall", // Still exists, but removed from map
+      "unova-victory-road", // Replaced by unova-victory-road-2
+    ],
     "reason": "Part of Entra Link and inaccessible in BW2",
     "versionGroups": ["black-2-white-2"],
     "reappearsIn": ["black-white"]

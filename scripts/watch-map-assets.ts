@@ -16,6 +16,7 @@ export function watchMapAssets(): Plugin {
     },
     configureServer(server) {
       const assetsDirectory = resolve(server.config.root, 'assets');
+      const exclusionsFile = resolve(server.config.root, 'config/location-exclusions.jsonc');
       let timer: ReturnType<typeof setTimeout> | undefined;
       let pending = false;
       let rebuilding = false;
@@ -28,7 +29,7 @@ export function watchMapAssets(): Plugin {
           // An editor may emit several events while saving or replacing a file.
           do {
             pending = false;
-            server.config.logger.info('SVG assets changed; rebuilding map data…');
+            server.config.logger.info('Map inputs changed; rebuilding map data…');
             const { stdout, stderr } = await execFileAsync(
               process.platform === 'win32' ? 'npm.cmd' : 'npm',
               ['run', 'predev'],
@@ -42,7 +43,7 @@ export function watchMapAssets(): Plugin {
             server.hot.send({ type: 'full-reload' });
           }
         } catch (error) {
-          server.config.logger.error(`Failed to rebuild SVG assets: ${String(error)}`);
+          server.config.logger.error(`Failed to rebuild map data: ${String(error)}`);
         } finally {
           rebuilding = false;
         }
@@ -51,13 +52,14 @@ export function watchMapAssets(): Plugin {
       function onAssetEvent(event: string, file: string) {
         if (!['add', 'change', 'unlink'].includes(event)) return;
         const assetPath = relative(assetsDirectory, file);
-        if (isAbsolute(assetPath) || assetPath.startsWith('..') || !assetPath.endsWith('.svg')) return;
+        if (resolve(file) !== exclusionsFile && (isAbsolute(assetPath) || assetPath.startsWith('..') || !assetPath.endsWith('.svg'))) return;
         pending = true;
         clearTimeout(timer);
         timer = setTimeout(() => void rebuild(), 250);
       }
 
       server.watcher.add(assetsDirectory);
+      server.watcher.add(exclusionsFile);
       server.watcher.on('all', onAssetEvent);
       cleanup = () => {
         closed = true;

@@ -27,7 +27,7 @@ CI refreshes these badges from live PokeAPI data on pushes to `main` and daily.
 Each game comes from its region's `version_groups` and the group's `versions`.
 The score matches the UI: unique matched applicable location IDs / applicable
 PokeAPI region locations. Both the web app and CI apply
-[`config/location-exclusions.json`](config/location-exclusions.json) to remove
+[`config/location-exclusions.jsonc`](config/location-exclusions.jsonc) to remove
 locations absent from the selected game. Unknown SVG IDs are reported separately
 and do not increase the score. Missing maps score 0%; games with no applicable
 locations are marked as such instead of claiming 100%.
@@ -71,7 +71,7 @@ API failures fail CI rather than publishing misleading scores. Low scores are in
 
 ## Game-specific location exclusions
 
-Edit `config/location-exclusions.json` using PokeAPI region and location names, and
+Edit `config/location-exclusions.jsonc` using PokeAPI region and location names, and
 version group names (such as `red-blue`). Each entry has:
 
 ```json

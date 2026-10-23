@@ -1,4 +1,4 @@
-import rules from "../../config/location-exclusions.json" with { type: "json" };
+import rules from "./location-exclusions.json" with { type: "json" };
 
 export interface LocationExclusion {
   region: string;

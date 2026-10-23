@@ -24,6 +24,7 @@
 		"@vitejs/plugin-rsc": "latest",
 		"cf": "^1.0.0-beta.20",
 		"jsdom": "^29.1.1",
+		"jsonc-parser": "^3.3.1",
 		"tailwindcss": "latest",
 		"typescript": "latest",
 		"vite": "8.3.0",
@@ -41,11 +42,14 @@
 		"deploy": "wrangler deploy",
 		"preview": "npm run build && npm run start --",
 		"cf-typegen": "wrangler types",
-		"predev": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts && node scripts/build-completeness.ts",
-		"prebuild": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts && node scripts/build-completeness.ts",
-		"maps:catalog": "node scripts/sync-maps.ts && node scripts/build-map-catalog.ts",
+		"predev": "node scripts/build-location-exclusions.ts && node scripts/sync-maps.ts && node scripts/build-map-catalog.ts && node scripts/build-completeness.ts",
+		"prebuild": "node scripts/build-location-exclusions.ts && node scripts/sync-maps.ts && node scripts/build-map-catalog.ts && node scripts/build-completeness.ts",
+		"maps:catalog": "node scripts/build-location-exclusions.ts && node scripts/sync-maps.ts && node scripts/build-map-catalog.ts",
 		"maps:completeness": "npm run maps:catalog && node scripts/build-completeness.ts",
 		"release:bundle": "node scripts/bundle-release.ts",
-		"maps:readme": "npm run maps:catalog && node scripts/build-completeness.ts --update-readme"
+		"maps:readme": "npm run maps:catalog && node scripts/build-completeness.ts --update-readme",
+		"pretest": "node scripts/build-location-exclusions.ts",
+		"pretest:watch": "node scripts/build-location-exclusions.ts",
+		"pretypecheck": "node scripts/build-location-exclusions.ts"
 	}
 }
