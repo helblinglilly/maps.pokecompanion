@@ -2,6 +2,25 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { expect, it } from 'vitest';
 import { MapLocationTooltip } from './MapLocationTooltip';
 
+it('lists each location on a shared node separately', () => {
+  render(
+    <MapLocationTooltip>
+      <svg>
+        <g id="Cities">
+          <path id="black-city_white-forest_black-tower_white-treehollow" data-testid="shared" />
+        </g>
+      </svg>
+    </MapLocationTooltip>,
+  );
+
+  fireEvent.pointerMove(screen.getByTestId('shared'));
+
+  expect(screen.getByRole('tooltip')).toHaveTextContent('4 locations');
+  expect(screen.getAllByRole('listitem').map(item => item.textContent)).toEqual([
+    'Black City', 'White Forest', 'Black Tower', 'White Treehollow',
+  ]);
+});
+
 it('shows names for nested city, route and POI artwork and clears on leaving', () => {
   const { container } = render(
     <MapLocationTooltip>
