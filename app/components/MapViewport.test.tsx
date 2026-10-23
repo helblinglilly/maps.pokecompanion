@@ -11,17 +11,18 @@ afterEach(() => {
 
 it('lists shared locations individually and selects their common shape', () => {
   vi.stubGlobal('PointerEvent', MouseEvent);
-  const names = ['black-city', 'white-forest'];
+  const names = ['black-city', 'white-forest', 'castelia-city', 'nimbasa-city'];
+  const sharedId = names.join('_');
   const { container } = render(<>
     <LocationList regionSlug="unova" versionGroup="black-white" versionGroupName="Black / White" regionName="Unova"
-      ids={['Cities', 'black-city_white-forest']} locations={names.map(name => ({ name, url: name }))} />
-    <MapViewport><svg><g id="Cities"><path id="black-city_white-forest" data-testid="shared" /></g></svg></MapViewport>
+      ids={['Cities', sharedId]} locations={names.map(name => ({ name, url: name }))} />
+    <MapViewport><svg><g id="Cities"><path id={sharedId} data-testid="shared" /></g></svg></MapViewport>
   </>);
   const shape = screen.getByTestId('shared');
   const viewport = container.querySelector('.touch-none')!;
   Object.defineProperty(viewport, 'setPointerCapture', { value: vi.fn() });
   try {
-    expect(screen.getByText(/2 of 2 applicable locations matched/)).toBeInTheDocument();
+    expect(screen.getByText(/4 of 4 applicable locations matched/)).toBeInTheDocument();
     fireEvent.click(screen.getByRole('checkbox', { name: 'white-forest' }));
     expect(shape).toHaveClass('highlighted');
     expect(screen.getByRole('checkbox', { name: 'white-forest' })).toBeChecked();

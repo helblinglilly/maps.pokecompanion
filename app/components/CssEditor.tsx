@@ -16,7 +16,7 @@ export function CssEditor({ value, onChange }: { value: string; onChange: (value
   const highlighted = useMemo(() => renderTokens(Prism.tokenize(value, Prism.languages.css)), [value]);
 
   return (
-    <div className="css-editor relative mt-3 overflow-hidden rounded border border-[#d7dfd5] bg-[#f6f8f5] focus-within:outline-2 focus-within:outline-green-700">
+    <div className="css-editor relative mt-3 min-h-0 flex-1 overflow-hidden rounded border border-[#d7dfd5] bg-[#f6f8f5] focus-within:outline-2 focus-within:outline-green-700">
       <pre ref={preview} aria-hidden="true" className="css-editor-text pointer-events-none absolute inset-0 overflow-hidden text-slate-900">
         <code>{highlighted}{"\n"}</code>
       </pre>
@@ -34,7 +34,7 @@ export function CssEditor({ value, onChange }: { value: string; onChange: (value
         autoCapitalize="off"
         autoCorrect="off"
         wrap="off"
-        className="css-editor-text relative block h-32 min-h-24 w-full resize-y overflow-auto bg-transparent text-transparent caret-slate-900 outline-none lg:h-44"
+        className="css-editor-text relative block h-full min-h-0 w-full resize-none overflow-auto bg-transparent text-transparent caret-slate-900 outline-none"
       />
     </div>
   );

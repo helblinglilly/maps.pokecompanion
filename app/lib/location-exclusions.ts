@@ -2,10 +2,10 @@ import rules from "../../config/location-exclusions.json" with { type: "json" };
 
 export interface LocationExclusion {
   region: string;
-  location: string;
+  location: string[];
   versionGroups: string[];
   reason: string;
-  reappearsIn: string[];
+  reappearsIn?: string[];
 }
 
 export const locationExclusions: LocationExclusion[] = rules;
@@ -29,43 +29,51 @@ export function validateLocationExclusions(
   for (const rule of exclusions) {
     const region = regions.find((region) => region.slug === rule.region);
     if (!region) throw new Error(`Exclusion references unknown PokeAPI region: ${rule.region}`);
-    if (!region.locations.some((location) => location.name === rule.location)) {
-      throw new Error(
-        `Exclusion references unknown PokeAPI location: ${rule.region}/${rule.location}`,
-      );
+    if (!Array.isArray(rule.location) || !rule.location.length) {
+      throw new Error('Exclusion needs a non-empty location array');
+    }
+    for (const name of rule.location) {
+      if (!region.locations.some((location) => location.name === name)) {
+        throw new Error(
+          `Exclusion references unknown PokeAPI location: ${rule.region}/${name}`,
+        );
+      }
     }
     if (
       typeof rule.reason !== "string" ||
       !rule.reason.trim() ||
       !Array.isArray(rule.versionGroups) ||
       !rule.versionGroups.length ||
-      !Array.isArray(rule.reappearsIn) ||
-      !rule.reappearsIn.length
+      (rule.reappearsIn !== undefined && !Array.isArray(rule.reappearsIn))
     ) {
       throw new Error(
-        `Exclusion needs versionGroups, a reason and reappearsIn: ${rule.region}/${rule.location}`,
+        `Exclusion needs versionGroups, a reason and optionally a reappearsIn array: ${rule.region}/${rule.location}`,
       );
     }
     const versionGroups = new Set(region.groups.map((group) => group.slug));
-    for (const versionGroup of [...rule.versionGroups, ...rule.reappearsIn]) {
+    for (const versionGroup of [...rule.versionGroups, ...(rule.reappearsIn ?? [])]) {
       if (!versionGroups.has(versionGroup))
         throw new Error(`Exclusion references unknown PokeAPI region/versionGroup: ${rule.region}/${versionGroup}`);
     }
-    for (const versionGroup of rule.versionGroups) {
-      const key = `${rule.region}/${rule.location}/${versionGroup}`;
-      if (seen.has(key)) throw new Error(`Duplicate location exclusion: ${key}`);
-      if (rule.reappearsIn.includes(versionGroup))
-        throw new Error(`Excluded versionGroup also listed in reappearsIn: ${key}`);
-      seen.add(key);
+    for (const name of rule.location) {
+      for (const versionGroup of rule.versionGroups) {
+        const key = `${rule.region}/${name}/${versionGroup}`;
+        if (seen.has(key)) throw new Error(`Duplicate location exclusion: ${key}`);
+        if (rule.reappearsIn?.includes(versionGroup))
+          throw new Error(`Excluded versionGroup also listed in reappearsIn: ${key}`);
+        seen.add(key);
+      }
     }
   }
   // A location cannot reappear in a versionGroup where another rule excludes it.
   for (const rule of exclusions) {
-    for (const versionGroup of rule.reappearsIn) {
-      if (seen.has(`${rule.region}/${rule.location}/${versionGroup}`)) {
-        throw new Error(
-          `Reappearance conflicts with exclusion: ${rule.region}/${rule.location}/${versionGroup}`,
-        );
+    for (const name of rule.location) {
+      for (const versionGroup of rule.reappearsIn ?? []) {
+        if (seen.has(`${rule.region}/${name}/${versionGroup}`)) {
+          throw new Error(
+            `Reappearance conflicts with exclusion: ${rule.region}/${name}/${versionGroup}`,
+          );
+        }
       }
     }
   }

@@ -1,9 +1,84 @@
 [
   {
     "region": "kanto",
-    "location": "one-island",
+    "location": ["one-island"],
     "versionGroups": ["red-blue", "yellow", "gold-silver", "crystal"],
     "reason": "Sevii Islands - Gen 3",
     "reappearsIn": ["firered-leafgreen"]
+  },
+  {
+    "region": "unova",
+    "location": ["unova-mystery-zone"],
+    "reason": "Placeholder for events",
+    "versionGroups": ["black-white", "black-2-white-2"]
+  },
+  {
+    "region": "unova",
+    "location": ["unova-faraway-place"],
+    "reason": "Placeholder for Pokémon from a different region",
+    "versionGroups": ["black-white", "black-2-white-2"]
+  },
+  {
+    "region": "unova",
+    "location": ["roaming-unova"],
+    "reason": "Used for Roaming Pokémon",
+    "versionGroups": ["black-white", "black-2-white-2"]
+  },
+  {
+    "region": "unova",
+    "location": ["hidden-grotto"],
+    "reason": "BW2 Exclusive - Place name for the gaps between trees",
+    "versionGroups": ["black-white", "black-2-white-2"]
+  },
+  {
+    "region": "unova",
+    "location": [
+      "challengers-cave",
+      "ns-castle",
+      "undella-bay",
+      "aspertia-city",
+      "virbank-city",
+      "humilau-city",
+      "pokestar-studios",
+      "join-avenue",
+      "floccesy-town",
+      "lentimas-town",
+      "unova-route-19",
+      "unova-route-20",
+      "unova-route-21",
+      "unova-route-22",
+      "unova-route-23",
+      "castelia-sewers",
+      "floccesy-ranch",
+      "virbank-complex",
+      "reversal-mountain",
+      "strange-house",
+      "unova-victory-road-2",
+      "plasma-frigate",
+      "relic-passage",
+      "clay-tunnel",
+      "seaside-cave",
+      "cave-of-being",
+      "marine-tube",
+      "virbank-gate",
+      "aspertia-gate",
+      "nature-sanctuary",
+      "medal-secretariat",
+      "underground-ruins",
+      "rocky-mountain-room",
+      "glacier-room",
+      "iron-room",
+      "pledge-grove"
+    ],
+    "reason": "BW2 Exclusive overworld locations",
+    "versionGroups": ["black-white"],
+    "reappearsIn": ["black-2-white-2"]
+  },
+  {
+    "region": "unova",
+    "location": ["entree-forest"],
+    "reason": "Part of Entra Link and inaccessible in BW2",
+    "versionGroups": ["black-2-white-2"],
+    "reappearsIn": ["black-white"]
   }
 ]

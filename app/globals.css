@@ -27,3 +27,47 @@
   .css-editor pre { visibility: hidden; }
   .css-editor textarea { color: CanvasText; caret-color: CanvasText; }
 }
+
+.map-workspace {
+  display: grid;
+  height: calc(100dvh - 2rem);
+  min-height: 0;
+  overflow: hidden;
+  grid-template-rows: minmax(0, var(--workspace-split)) 1rem minmax(0, 1fr);
+}
+.map-workspace-sidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+.map-css-content:not([hidden]) { display: flex; }
+.workspace-resize-handle {
+  display: flex;
+  flex: 0 0 1rem;
+  align-items: center;
+  justify-content: center;
+  cursor: row-resize;
+  touch-action: none;
+  border-radius: 0.25rem;
+}
+.workspace-resize-handle::after {
+  content: "";
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 1rem;
+  background: #a4b3a0;
+}
+.workspace-resize-handle:hover,
+.workspace-resize-handle:focus-visible { background: #d7dfd5; outline: 2px solid #52665e; outline-offset: -2px; }
+@media (min-width: 48rem) {
+  .map-workspace { height: calc(100dvh - 4rem); }
+}
+@media (min-width: 64rem) {
+  .map-workspace {
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: minmax(0, var(--workspace-split)) 1rem minmax(0, 1fr);
+  }
+  .workspace-resize-handle-responsive { cursor: col-resize; }
+  .workspace-resize-handle-responsive::after { width: 0.25rem; height: 2rem; }
+}

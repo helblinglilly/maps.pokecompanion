@@ -36,3 +36,25 @@ it("updates and resets CSS inside the artwork while preserving selection and zoo
   expect(root.querySelectorAll("style")[1].textContent).toBe(defaultMapCss);
   expect(screen.getByRole("textbox", { name: "Map CSS" })).toHaveValue(defaultMapCss);
 });
+
+it("collapses CSS without losing edits and resizes both panel splits with the keyboard", () => {
+  render(<MapStyleWorkspace sidebar={<p>Locations</p>}><p>Map</p></MapStyleWorkspace>);
+  fireEvent.change(screen.getByRole("textbox", { name: "Map CSS" }), { target: { value: "svg { opacity: .5; }" } });
+  const toggle = screen.getByRole("button", { name: "Custom CSS" });
+  fireEvent.click(toggle);
+  expect(toggle).toHaveAttribute("aria-expanded", "false");
+  expect(screen.queryByRole("textbox", { name: "Map CSS" })).toBeNull();
+  expect(screen.queryByRole("separator", { name: "Resize locations and CSS panels" })).toBeNull();
+  fireEvent.click(toggle);
+  expect(screen.getByRole("textbox", { name: "Map CSS" })).toHaveValue("svg { opacity: .5; }");
+  for (const name of ["Resize locations and CSS panels", "Resize sidebar and map"]) {
+    const handle = screen.getByRole("separator", { name });
+    const initial = Number(handle.getAttribute("aria-valuenow"));
+    fireEvent.keyDown(handle, { key: "ArrowDown" });
+    expect(handle).toHaveAttribute("aria-valuenow", String(initial + 2));
+    fireEvent.keyDown(handle, { key: "Home" });
+    expect(handle).toHaveAttribute("aria-valuenow", "20");
+    fireEvent.keyDown(handle, { key: "ArrowUp" });
+    expect(handle).toHaveAttribute("aria-valuenow", "20");
+  }
+});

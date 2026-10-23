@@ -9,7 +9,8 @@ Refer to the assets subfolder. The files were created with Affinity Designer 2 a
 The SVG exports are bundled by the manual **Release maps** workflow.
 
 Use exact PokeAPI location names as SVG element IDs. When one shape represents
-multiple locations, separate their names with `_`, for example:
+multiple locations, separate their names with `_`. Any number of locations is
+supported: `location-a_location-b_location-c_...`. For example:
 
 ```xml
 <path id="black-city_white-forest" d="..." />
@@ -18,8 +19,8 @@ multiple locations, separate their names with `_`, for example:
 Each name is validated independently and counts once toward completeness, even
 if it also appears elsewhere in the SVG. Game-specific exclusions still apply
 to each name, and unknown names are reported individually. The location list
-shows each name separately; selecting either highlights the shared shape.
-Clicking the shape selects both locations (clicking again deselects both).
+shows each name separately; selecting any name highlights the shared shape.
+Clicking the shape selects all its locations (clicking again deselects all).
 Use the same underscore-separated name for the layer in Affinity Designer.
 
 ## App
@@ -116,18 +117,21 @@ API failures fail CI rather than publishing misleading scores. Low scores are in
 
 ## Game-specific location exclusions
 
-Edit `config/location-exclusions.json` using PokeAPI region, location, and individual
-version names (such as `red`, not the version group `red-blue`). Each entry has:
+Edit `config/location-exclusions.json` using PokeAPI region and location names, and
+version group names (such as `red-blue`). Each entry has:
 
 ```json
 {
   "region": "kanto",
-  "location": "one-island",
-  "games": ["red", "blue", "yellow"],
+  "location": ["one-island"],
+  "versionGroups": ["red-blue", "yellow"],
   "reason": "One Island is part of the Sevii Islands, introduced in FireRed and LeafGreen.",
-  "reappearsIn": ["firered", "leafgreen"]
+  "reappearsIn": ["firered-leafgreen"]
 }
 ```
+
+The `location` array can group several places that share the same reason, version
+groups, and reappearance version groups.
 
 The file starts with One Island as an example, based on its
 [Sevii Islands game appearances](https://bulbapedia.bulbagarden.net/wiki/Sevii_Islands);
@@ -135,7 +139,7 @@ it is not a complete list of game differences. Add further exclusions explicitly
 PokeAPI remains the source of location identities and region/game availability.
 Builds reject unknown regions, locations or games, empty reasons or game lists,
 duplicate rules for a location/game, and conflicting reappearance games.
-`reappearsIn` lists games where the location appears or returns; it does not
+`reappearsIn` is optional and may be omitted or empty. It lists games where the location appears or returns; it does not
 implicitly exclude any other games.
 
 Map pages offer a game selector within their version group. Excluded locations
