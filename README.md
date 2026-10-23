@@ -1,73 +1,12 @@
 # maps.pokecompanion
 
-Schemantic SVG files that map different Pokémon regions, using identifiers that correlate to PokéAPI.
+PokéAPI compatible regional Pokémon Maps.
 
-## Assets
+## Contributions
 
-Refer to the assets subfolder. The files were created with Affinity Designer 2 and can be modified.
+This project is looking for supporters. Please refer to the completion chart and Contributing.md
 
-The SVG exports are bundled by the manual **Release maps** workflow.
-
-Use exact PokeAPI location names as SVG element IDs. When one shape represents
-multiple locations, separate their names with `_`. Any number of locations is
-supported: `location-a_location-b_location-c_...`. For example:
-
-```xml
-<path id="black-city_white-forest" d="..." />
-```
-
-Each name is validated independently and counts once toward completeness, even
-if it also appears elsewhere in the SVG. Game-specific exclusions still apply
-to each name, and unknown names are reported individually. The location list
-shows each name separately; selecting any name highlights the shared shape.
-Clicking the shape selects all its locations (clicking again deselects all).
-Use the same underscore-separated name for the layer in Affinity Designer.
-
-## App
-
-A demo of the Maps in use can be found at [maps.pokecompanion.com](https://maps.pokecompanion.com)
-
-The viewer UI lives in `app/components/`. `MapRenderer` loads repository-owned
-SVG artwork; `MapViewport` handles viewport controls, and `LocationList` compares
-SVG identifiers against PokeAPI region locations.
-
-## Tests
-
-Run `npm test` for a single test run, or `npm run test:watch` during development.
-You can target a file with `npm test -- app/components/atlas/zoom-controls.test.tsx`.
-
-Tests use Vitest with jsdom and React Testing Library. Place tests beside the code
-as `*.test.ts` or `*.test.tsx`, and import test APIs from `vitest`. DOM matchers
-and automatic cleanup are configured in `tests/setup.ts`. The separate
-`vitest.config.ts` supports the `@/` alias and keeps unit tests independent of
-the Vinext and Cloudflare runtime plugins.
-
-## Map catalog
-
-The scripts in `scripts/` use TypeScript and run directly with Node.js 22.18+
-(or Node.js 24+) using its built-in type stripping.
-
-During `npm run dev`, adding, changing, or removing an SVG in `assets/` reruns map
-preparation, restarts the development server, and reloads the browser. Failed map
-validation is reported in the terminal; save another SVG change to retry.
-
-`npm run dev` and `npm run build` sync the SVG assets into `public/maps`, then
-fetch PokeAPI regions to generate `app/lib/map-catalog.json`. These commands
-require access to PokeAPI; pages use the generated catalog without runtime API calls.
-
-PokeAPI's region `version_groups` field defines every region's version groups,
-including groups with no local artwork. `app/lib/map-assets.ts` explicitly assigns
-local SVG files to those API groups; filenames do not determine availability.
-For example, the same Kanto SVG is assigned to both `red-blue` and `yellow`.
-Catalog generation rejects assignments to unknown API regions or groups and
-missing SVG files. The homepage labels groups without an assignment as missing maps.
-Available maps use static `/{region}/{versionGroup}` routes.
-Combined filename URLs (such as `/kanto/red-blue-yellow`) are automatically
-redirected to the first matching version group. The same predev/prebuild script
-generates `app/lib/map-redirects.json`, which `next.config.ts` loads; no regional
-route folders need to be maintained.
-
-## Completeness
+## Completion
 
 CI refreshes these badges from live PokeAPI data on pushes to `main` and daily.
 Each game comes from its region's `version_groups` and the group's `versions`.
@@ -148,25 +87,15 @@ already drawn in the SVG. They are omitted from both matched and total counts
 and from the missing list. The CI JSON report includes the same exclusions and
 explanations per game. All other PokeAPI locations remain required by default.
 
-## CI and deployment
 
-Pull requests and pushes to `main` run tests, type checking, a production build,
-and `npm run maps:completeness`. CI uploads the report and badges as artifacts.
-Badges and the JSON report are generated into ignored `public/completeness/` files
-on every app build, then served at `https://maps.pokecompanion.com/completeness/`.
-The README uses stable hosted URLs; no bot commits or repository write permission
-are needed. Run `npm run maps:readme` and commit the README when adding regions
-or version groups to refresh its table.
+## Assets
 
-Every push to `main` that passes CI deploys the built app using Wrangler and the
-`production` environment's `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` secrets.
-Daily scheduled runs and manual runs on `main` also deploy so hosted badges stay
-current with PokeAPI changes. Pull requests validate and upload artifacts only.
-`wrangler.jsonc` defines the Worker and custom domain; the Vite plugin generates
-its deployment config during the build.
+Each SVG element has a ID that correlates to its resource name in PokéAPI.
 
-To publish assets, edit `RELEASE_NOTES.md`, commit it, then run **Release maps**
-in GitHub Actions on `main` with a new version tag (for example `v1.0.0`). The job
-validates the maps, bundles only SVG exports, release notes, and the completeness
-report into a ZIP, then creates a GitHub Release at that exact commit using the
-markdown file as its release body. Affinity source files are excluded.
+## Usage
+
+Download the respective assets - see completeness table for links.
+
+Once regions have reached 100% completeness, they will become available to download via the Releases tab
+
+A demo of the Maps in use can be found at [maps.pokecompanion.com](https://maps.pokecompanion.com)
