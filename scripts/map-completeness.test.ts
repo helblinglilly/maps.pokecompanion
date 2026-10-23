@@ -3,6 +3,16 @@ import { badge, scoreMap } from './map-completeness';
 
 const locations = ['pallet-town', 'kanto-route-1'].map(name => ({ name, url: name }));
 describe('completeness scores', () => {
+  it('validates shared location names individually without double counting', () => {
+    const sharedLocations = ['black-city', 'white-forest'].map(name => ({ name, url: name }));
+    expect(scoreMap(['Cities', 'black-city_white-forest', 'black-city'], sharedLocations, true))
+      .toMatchObject({ matched: 2, total: 2, percent: 100, missing: [], unknown: [] });
+    expect(scoreMap(['black-city_typo'], sharedLocations, true))
+      .toMatchObject({ matched: 1, missing: ['white-forest'], unknown: ['typo'] });
+    const exclusions = [{ region: 'unova', location: 'white-forest', versionGroups: ['black-white'], reason: 'Not available.', reappearsIn: [] }];
+    expect(scoreMap(['black-city_white-forest'], sharedLocations, true, exclusions))
+      .toMatchObject({ matched: 1, total: 1, percent: 100, missing: [], unknown: [] });
+  });
   it('counts unique API locations and exposes missing and unknown IDs', () => {
     expect(scoreMap(['Cities', 'pallet-town', 'pallet-town', 'typo'], locations, true)).toEqual({
       matched: 1, total: 2, percent: 50, status: 'available', missing: ['kanto-route-1'], unknown: ['typo'], excluded: [],

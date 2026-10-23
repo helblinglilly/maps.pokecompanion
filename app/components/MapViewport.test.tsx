@@ -9,6 +9,35 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
+it('lists shared locations individually and selects their common shape', () => {
+  vi.stubGlobal('PointerEvent', MouseEvent);
+  const names = ['black-city', 'white-forest'];
+  const { container } = render(<>
+    <LocationList regionSlug="unova" versionGroup="black-white" versionGroupName="Black / White" regionName="Unova"
+      ids={['Cities', 'black-city_white-forest']} locations={names.map(name => ({ name, url: name }))} />
+    <MapViewport><svg><g id="Cities"><path id="black-city_white-forest" data-testid="shared" /></g></svg></MapViewport>
+  </>);
+  const shape = screen.getByTestId('shared');
+  const viewport = container.querySelector('.touch-none')!;
+  Object.defineProperty(viewport, 'setPointerCapture', { value: vi.fn() });
+  try {
+    expect(screen.getByText(/2 of 2 applicable locations matched/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('checkbox', { name: 'white-forest' }));
+    expect(shape).toHaveClass('highlighted');
+    expect(screen.getByRole('checkbox', { name: 'white-forest' })).toBeChecked();
+    expect(screen.getByRole('checkbox', { name: 'black-city' })).not.toBeChecked();
+    fireEvent.pointerDown(shape, { button: 0, clientX: 20, clientY: 20 });
+    fireEvent.pointerUp(viewport, { clientX: 20, clientY: 20 });
+    for (const name of names) expect(screen.getByRole('checkbox', { name })).toBeChecked();
+    fireEvent.pointerDown(shape, { button: 0, clientX: 20, clientY: 20 });
+    fireEvent.pointerUp(viewport, { clientX: 20, clientY: 20 });
+    expect(shape).not.toHaveClass('highlighted');
+    for (const name of names) expect(screen.getByRole('checkbox', { name })).not.toBeChecked();
+  } finally {
+    vi.unstubAllGlobals();
+  }
+});
+
 it('toggles multiple locations, restores URL selection and clears all highlights', () => {
   vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
     x: 0, y: 0, left: 0, top: 0, right: 800, bottom: 600, width: 800, height: 600,

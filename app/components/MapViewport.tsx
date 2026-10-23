@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type ReactNode, type PointerEvent } from "
 import { useLocationSelection } from "../hooks/use-location-selection";
 import { MapLocationTooltip } from "./MapLocationTooltip";
 import { getMapLocation } from "../lib/map-location-target";
+import { splitMapLocationIds } from "../lib/map-location-ids";
 
 type Point = { x: number; y: number };
 type View = Point & { scale: number };
@@ -27,7 +28,7 @@ export function MapViewport({ children }: { children: ReactNode }) {
     const artwork = container.querySelector("[data-map-artwork]");
     const root = artwork?.shadowRoot ?? container;
     const targets = [...root.querySelectorAll<SVGGraphicsElement>("svg [id]")]
-      .filter((element) => selectedIds.has(element.id));
+      .filter((element) => splitMapLocationIds(element.id).some(id => selectedIds.has(id)));
     if (!targets.length) {
       setView(initial);
       return;

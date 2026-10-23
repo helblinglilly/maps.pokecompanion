@@ -4,20 +4,20 @@ import { CssEditor } from "./CssEditor";
 import { createContext, useContext, useState, type ReactNode } from "react";
 
 export const defaultMapCss = `#Routes * {
-  stroke: grey !important;
-  stroke-width: 40px !important;
+  /* stroke: grey !important; */
+  /* stroke-width: 40px !important; */
 }
 
 #Routes > .highlighted {
-  stroke-width: 50px !important;
+  /* stroke-width: 50px !important; */
 }
 
 #Cities * {
-  fill: red !important;
+  /* fill: red !important; */
 }
 
 #POI * {
-  fill: blue !important;
+  /* fill: blue !important; */
 }
 
 .highlighted {

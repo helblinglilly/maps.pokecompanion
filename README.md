@@ -8,6 +8,20 @@ Refer to the assets subfolder. The files were created with Affinity Designer 2 a
 
 The SVG exports are bundled by the manual **Release maps** workflow.
 
+Use exact PokeAPI location names as SVG element IDs. When one shape represents
+multiple locations, separate their names with `_`, for example:
+
+```xml
+<path id="black-city_white-forest" d="..." />
+```
+
+Each name is validated independently and counts once toward completeness, even
+if it also appears elsewhere in the SVG. Game-specific exclusions still apply
+to each name, and unknown names are reported individually. The location list
+shows each name separately; selecting either highlights the shared shape.
+Clicking the shape selects both locations (clicking again deselects both).
+Use the same underscore-separated name for the layer in Affinity Designer.
+
 ## App
 
 A demo of the Maps in use can be found at [maps.pokecompanion.com](https://maps.pokecompanion.com)
@@ -31,6 +45,10 @@ the Vinext and Cloudflare runtime plugins.
 
 The scripts in `scripts/` use TypeScript and run directly with Node.js 22.18+
 (or Node.js 24+) using its built-in type stripping.
+
+During `npm run dev`, adding, changing, or removing an SVG in `assets/` reruns map
+preparation, restarts the development server, and reloads the browser. Failed map
+validation is reported in the terminal; save another SVG change to retry.
 
 `npm run dev` and `npm run build` sync the SVG assets into `public/maps`, then
 fetch PokeAPI regions to generate `app/lib/map-catalog.json`. These commands

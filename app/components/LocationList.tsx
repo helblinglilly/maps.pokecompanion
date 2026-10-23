@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { LocationSearch } from "./LocationSearch";
 import { exclusionsForVersionGroup } from "../lib/location-exclusions";
 import { ExcludedLocations } from "./ExcludedLocations";
 import { validateMapIds, type RegionLocation } from "../lib/map-validation";
@@ -21,10 +23,19 @@ export function LocationList({
   locations: RegionLocation[];
 }) {
   const selection = useLocationSelection();
+  const [query, setQuery] = useState("");
+  const normalize = (value: string) => value.toLowerCase().replace(/[-_\s]+/g, " ").trim();
+  const search = normalize(query);
+  const matches = (value: string) => normalize(value).includes(search);
   const { elements, missing, matched, total, percent, excluded } = validateMapIds(ids, locations, exclusionsForVersionGroup(regionSlug, versionGroup));
   const sortedElements = [...elements].sort(
     (a, b) => Number(Boolean(a.location)) - Number(Boolean(b.location)),
   );
+
+  const visibleMissing = missing.filter(location => matches(location.name));
+  const visibleElements = sortedElements.filter(element => matches(element.id));
+  const visibleExcluded = excluded.filter(location => matches(location.name));
+  const resultCount = visibleMissing.length + visibleElements.length + visibleExcluded.length;
 
   return (
     <aside
@@ -32,7 +43,8 @@ export function LocationList({
       tabIndex={0}
       className="h-full min-h-0 min-w-0 overflow-y-auto overscroll-contain rounded-lg border border-[#d7dfd5] bg-white p-5"
     >
-      <div className="sticky -top-5 z-10 -mx-5 -mt-5 mb-5 flex items-center justify-between gap-3 border-b border-[#d7dfd5] bg-white px-5 py-3">
+      <div className="sticky -top-5 z-10 -mx-5 -mt-5 mb-5 border-b border-[#d7dfd5] bg-white px-5 py-3">
+        <div className="flex items-center justify-between gap-3">
         <span className="text-sm" aria-live="polite">{selection.locations.length} selected</span>
         <button
           type="button"
@@ -42,6 +54,9 @@ export function LocationList({
         >
           Clear all
         </button>
+        </div>
+        <LocationSearch query={query} onQueryChange={setQuery} />
+        {search && <p className="mt-2 text-xs" role="status">{resultCount ? `${resultCount} results` : "No locations match your search."}</p>}
       </div>
       <h1 id="map-elements-heading" className="text-lg font-semibold">
         {regionName} map elements
@@ -49,12 +64,12 @@ export function LocationList({
       <p className="mt-2 text-sm">
         {matched} of {total} applicable locations matched for Pokémon {versionGroupName}{total ? ` (${percent}%)` : " (no applicable locations)"}
       </p>
-      <h2 className="mt-6 font-semibold">Missing from Map ({missing.length})</h2>
+      <h2 className="mt-6 font-semibold">Missing from Map ({search ? `${visibleMissing.length} of ${missing.length}` : missing.length})</h2>
       <p className="mt-2 text-xs">
         Applicable PokeAPI locations that are missing from the map.
       </p>
       <ul className="mt-3 space-y-2 text-sm text-amber-800">
-        {missing.map((location) => (
+        {visibleMissing.map((location) => (
           <li key={location.name}>
             <a href={location.url} className="wrap-break-word underline">
               {location.name}
@@ -63,13 +78,13 @@ export function LocationList({
         ))}
       </ul>
 
-      <h2 className="text-lg font-semibold">Map elements</h2>
+      <h2 className="text-lg font-semibold">Map elements{search ? ` (${visibleElements.length} of ${elements.length})` : ""}</h2>
 
       <p className="mt-2 text-xs text-[#52665e]">
         Compared with PokeAPI, with documented exclusions for this version group.
       </p>
       <ul className="mt-4 space-y-3 text-sm">
-        {sortedElements.map(({ id, location }) => (
+        {visibleElements.map(({ id, location }) => (
           <li key={id} className="wrap-break-word">
             <span className="inline-flex max-w-full items-center gap-2">
               <label className="inline-flex min-w-0 cursor-pointer items-center gap-2 hover:underline">
@@ -106,7 +121,7 @@ export function LocationList({
       {!elements.length && <p className="mt-4 text-sm">No location SVG IDs found.</p>}
 
       {total > 0 && !missing.length && <p className="mt-3 text-sm">All applicable locations are present.</p>}
-      <ExcludedLocations locations={excluded} versionGroupName={versionGroupName} />
+      <ExcludedLocations locations={visibleExcluded} versionGroupName={versionGroupName} />
     </aside>
   );
 }

@@ -2,6 +2,12 @@ import { describe, expect, it } from 'vitest';
 import { extractSvgIds, validateMapIds } from './map-validation';
 
 describe('map validation', () => {
+  it('recognizes underscore-separated shared location IDs', () => {
+    const ids = extractSvgIds(`<svg><g id="Cities"><g id="black-city_white-forest" /></g></svg>`);
+    expect(ids).toEqual(['Cities', 'black-city_white-forest']);
+    const locations = ['black-city', 'white-forest'].map(name => ({ name, url: name }));
+    expect(validateMapIds(ids, locations)).toMatchObject({ matched: 2, total: 2, missing: [] });
+  });
   it('includes structural and location IDs, ignoring comments and duplicate IDs', () => {
     expect(extractSvgIds(`<svg><g id="Routes"><path id='kanto-route-1'/></g>
       <!-- <g id="obsolete"/> --><g id="Routes"/><path data-id="not-an-id"/></svg>`))

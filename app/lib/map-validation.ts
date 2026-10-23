@@ -1,4 +1,5 @@
 import type { LocationExclusion } from './location-exclusions.ts';
+import { splitMapLocationIds } from './map-location-ids.ts';
 
 /** Read IDs from our trusted SVG assets, including non-location groups. */
 export function extractSvgIds(svg: string): string[] {
@@ -15,7 +16,7 @@ export interface RegionLocation {
 export function validateMapIds(ids: string[], locations: RegionLocation[], exclusions: LocationExclusion[] = []) {
   const structuralIds = new Set(['Cities', 'Routes', 'POI', 'Points-of-Interest', 'Points of Interest']);
   const byName = new Map(locations.map(location => [location.name, location]));
-  const present = new Set(ids);
+  const present = new Set(ids.flatMap(splitMapLocationIds));
   const excludedNames = new Set(exclusions.map(rule => rule.location));
   const eligible = locations.filter(location => !excludedNames.has(location.name));
   const missing = eligible.filter(location => !present.has(location.name));

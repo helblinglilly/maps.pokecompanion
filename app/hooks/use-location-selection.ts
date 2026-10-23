@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { splitMapLocationIds } from "../lib/map-location-ids";
 
 const selectionChangeEvent = "map-location-selection-change";
 
@@ -26,7 +27,7 @@ function readLocations(search: string): string[] {
       return [];
     }
   });
-  return [...new Set(locations.filter(Boolean))];
+  return [...new Set(locations.flatMap(splitMapLocationIds))];
 }
 
 export function useLocationSelection() {
@@ -45,7 +46,10 @@ export function useLocationSelection() {
   return {
     locations,
     select(id: string) {
-      update(locations.includes(id) ? locations.filter(item => item !== id) : [...locations, id]);
+      const ids = splitMapLocationIds(id);
+      update(ids.every(item => locations.includes(item))
+        ? locations.filter(item => !ids.includes(item))
+        : [...new Set([...locations, ...ids])]);
     },
     clear() {
       update([]);
