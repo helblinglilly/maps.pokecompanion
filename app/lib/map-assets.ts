@@ -9,6 +9,9 @@ export const mapAssets: Record<number, Record<string, string>> = {
     "black-white": "region-5-black-white.svg",
     "black-2-white-2": "region-5-black-2-white-2.svg",
   },
+  6: {
+    "x-y": "region-6-x-y.svg",
+  },
 };
 
 export interface CatalogRegion {

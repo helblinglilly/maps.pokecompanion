@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 7445 4782" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Routes">
+    </g>
+    <g id="Cities">
+        <g id="kiloude" transform="matrix(0.445485,0,0,0.445485,4163.22,3022.66)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="vaniville-town" transform="matrix(0.445485,0,0,0.445485,3528.44,2704.24)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="aquacorde-town" transform="matrix(0.445485,0,0,0.445485,3528.44,2164.16)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="santalune-city" transform="matrix(0.445485,0,0,0.445485,3184.84,1304.67)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="camphrier-town" transform="matrix(0.445485,0,0,0.445485,1684.2,1358.95)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="cyllage-city" transform="matrix(0.445485,0,0,0.445485,-21.5859,1332.67)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="ambrette-town" transform="matrix(0.445485,0,0,0.445485,338.303,2226.7)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="geosenge-town" transform="matrix(0.445485,0,0,0.445485,-637.119,881.858)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="shalour-city" transform="matrix(0.445485,0,0,0.445485,-210.586,324.826)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="coumarine-city" transform="matrix(0.445485,0,0,0.445485,1207.36,29.5291)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="laverre-city" transform="matrix(0.445485,0,0,0.445485,2463.56,-848.369)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="dendemille-town" transform="matrix(0.445485,0,0,0.445485,3688.98,38.5291)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="anistar-city" transform="matrix(0.445485,0,0,0.445485,5093.6,419.582)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="couriway-town" transform="matrix(0.445485,0,0,0.445485,5483.48,794.032)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="snowbelle-city" transform="matrix(0.445485,0,0,0.445485,4872.02,1271.54)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="kalos-pokemon-league" transform="matrix(0.445485,0,0,0.445485,4056.51,700.032)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:86.8px;"/>
+        </g>
+        <g id="lumiose-city" transform="matrix(1.21761,0,0,1.21761,80.9442,-2039.98)">
+            <circle cx="3097.55" cy="3134.91" r="224.474" style="fill:rgb(13,181,255);stroke:rgb(61,62,62);stroke-width:31.76px;"/>
+        </g>
+    </g>
+    <g id="POI">
+    </g>
+</svg>
