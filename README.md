@@ -2,11 +2,26 @@
 
 PokéAPI compatible regional Pokémon Maps.
 
+## Compatibility
+
+Each SVG element has a ID that correlates to its resource name in PokéAPI.
+
+The same region may appear in different games - a different map exists for each game. This means that no one map may offer 100% compatibility with PokéAPI. Please refer to `locations-exclusions.json` for more info about each location.
+
+### Usage
+
+Download the respective assets - see completeness table for links.
+
+Once regions have reached 100% completeness, they will become available to download via the Releases tab
+
+A demo of the Maps in use can be found at [maps.pokecompanion.com](https://maps.pokecompanion.com)
+
+
 ## Contributions
 
 This project is looking for supporters. Please refer to the completion chart and Contributing.md
 
-## Completion
+## Status
 
 CI refreshes these badges from live PokeAPI data on pushes to `main` and daily.
 Each game comes from its region's `version_groups` and the group's `versions`.
@@ -86,16 +101,3 @@ are listed at the bottom with their reason and reappearance games, even when
 already drawn in the SVG. They are omitted from both matched and total counts
 and from the missing list. The CI JSON report includes the same exclusions and
 explanations per game. All other PokeAPI locations remain required by default.
-
-
-## Assets
-
-Each SVG element has a ID that correlates to its resource name in PokéAPI.
-
-## Usage
-
-Download the respective assets - see completeness table for links.
-
-Once regions have reached 100% completeness, they will become available to download via the Releases tab
-
-A demo of the Maps in use can be found at [maps.pokecompanion.com](https://maps.pokecompanion.com)
