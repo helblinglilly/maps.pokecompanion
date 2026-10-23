@@ -5,6 +5,9 @@ export const mapAssets: Record<number, Record<string, string>> = {
     yellow: 'region-1-red-blue-yellow.svg',
     'firered-leafgreen': 'region-1-firered-leafgreen.svg',
   },
+  5: {
+    'black-white': 'region-5-black-white.svg',
+  },
 };
 
 export interface CatalogRegion {
