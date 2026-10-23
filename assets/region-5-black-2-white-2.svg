@@ -26,10 +26,10 @@
         <g id="undella-bay" transform="matrix(1,0,0,1,-111.539,-1513.87)">
             <path d="M6951.66,3507.82L7280.8,3183.41" style="fill:none;stroke:rgb(255,189,49);stroke-width:55.56px;stroke-linecap:round;"/>
         </g>
-        <g id="marine-tunnel" transform="matrix(1,0,0,1,-111.539,-1513.87)">
+        <g id="marine-tube" transform="matrix(1,0,0,1,-111.539,-1513.87)">
             <path d="M6951.66,3507.82L7222.65,3507.82L7271.25,3566.28L7737.66,3569.14L7791.63,3494.93L7789.62,2687.14L7760.53,2646.63L7593.1,2645.65L7521.06,2579.7L7285.29,2579.7" style="fill:none;stroke:rgb(255,189,49);stroke-width:55.56px;stroke-linecap:round;"/>
         </g>
-        <g id="unova-route-20" transform="matrix(1,0,0,1,-4882.57,263.278)">
+        <g id="unova-route-20_pledge-grove" transform="matrix(1,0,0,1,-4882.57,263.278)">
             <path d="M7121.05,3506.32L6042.85,3506.32" style="fill:none;stroke:rgb(255,189,49);stroke-width:55.56px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-3474.28,-219.136)">
@@ -68,7 +68,7 @@
         <g id="tubeline-bridge" transform="matrix(1,0,0,1,173.978,3.12639e-13)">
             <path d="M2799.59,1277.62L2862.41,1219.6L3337.44,1219.6L3392.53,1277.62" style="fill:none;stroke:rgb(255,189,49);stroke-width:55.56px;"/>
         </g>
-        <g id="unova-route-9" transform="matrix(1,0,0,1,173.978,3.12639e-13)">
+        <g id="unova-route-9_unova-shopping-mall" transform="matrix(1,0,0,1,173.978,3.12639e-13)">
             <path d="M3337.44,1219.6L3392.53,1277.62L3925.11,1277.62" style="fill:none;stroke:rgb(255,189,49);stroke-width:55.56px;"/>
         </g>
         <g id="unova-route-11" transform="matrix(1,0,0,1,173.978,3.12639e-13)">
@@ -105,6 +105,38 @@
             <path d="M5079.64,2709.38L4996.91,2650.71L4524.87,2650.71L4458.62,2709.38" style="fill:none;stroke:rgb(255,189,49);stroke-width:55.56px;"/>
         </g>
     </g>
+    <g id="Gates">
+        <g id="accumula-gate" transform="matrix(0.420225,0,0,0.420225,4209.5,2143.85)">
+            <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(255,189,49);stroke:rgb(255,189,49);stroke-width:76.02px;"/>
+        </g>
+        <g id="undella-gate" transform="matrix(0.420225,0,0,0.420225,3854.55,82.0551)">
+            <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(255,189,49);stroke:rgb(255,189,49);stroke-width:76.02px;"/>
+        </g>
+        <g id="nacrene-gate" transform="matrix(0.420225,0,0,0.420225,3493.37,1684.29)">
+            <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(255,189,49);stroke:rgb(255,189,49);stroke-width:76.02px;"/>
+        </g>
+        <g id="route-gate" transform="matrix(0.420225,0,0,0.420225,1386.68,-552.289)">
+            <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(255,189,49);stroke:rgb(255,189,49);stroke-width:76.02px;"/>
+        </g>
+        <g id="castelia-gate" transform="matrix(0.420225,0,0,0.420225,1232.71,1903.14)">
+            <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(255,189,49);stroke:rgb(255,189,49);stroke-width:76.02px;"/>
+        </g>
+        <g id="virbank-gate" transform="matrix(0.420225,0,0,0.420225,-776.504,1953.14)">
+            <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(255,189,49);stroke:rgb(255,189,49);stroke-width:76.02px;"/>
+        </g>
+        <g id="aspertia-gate" transform="matrix(0.420225,0,0,0.420225,-2273.52,2597.45)">
+            <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(255,189,49);stroke:rgb(255,189,49);stroke-width:76.02px;"/>
+        </g>
+        <g id="nimbasa-gate" transform="matrix(0.420225,0,0,0.420225,1083.62,887.487)">
+            <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(255,189,49);stroke:rgb(255,189,49);stroke-width:76.02px;"/>
+        </g>
+        <g id="black-gate_white-gate" transform="matrix(0.420225,0,0,0.420225,3067.18,811.643)">
+            <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(255,189,49);stroke:rgb(255,189,49);stroke-width:76.02px;"/>
+        </g>
+        <g id="opelucid-gate" transform="matrix(0.420225,0,0,0.420225,1083.62,-544.273)">
+            <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(255,189,49);stroke:rgb(255,189,49);stroke-width:76.02px;"/>
+        </g>
+    </g>
     <g id="Cities" transform="matrix(1,0,0,1,-100,0)">
         <g id="nuvema-town" transform="matrix(1.58265,0,0,1.58265,5843.08,1658.75)">
             <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(33,132,165);stroke:rgb(255,189,49);stroke-width:27.2px;stroke-linecap:square;stroke-linejoin:round;"/>
@@ -118,7 +150,7 @@
         <g id="nacrene-city" transform="matrix(1.58265,0,0,1.58265,4986.95,466.071)">
             <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(33,132,165);stroke:rgb(255,189,49);stroke-width:27.2px;stroke-linecap:square;stroke-linejoin:round;"/>
         </g>
-        <g id="castelia-city_royal-unova" transform="matrix(1.58265,0,0,1.58265,2866.29,824.926)">
+        <g id="castelia-city_royal-unova_medal-secretariat" transform="matrix(1.58265,0,0,1.58265,2866.29,824.926)">
             <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(33,132,165);stroke:rgb(255,189,49);stroke-width:27.2px;stroke-linecap:square;stroke-linejoin:round;"/>
         </g>
         <g id="unity-tower" transform="matrix(1.21525,0,0,1.21525,2161.06,2333.63)">
@@ -154,7 +186,7 @@
         <g id="undella-town" transform="matrix(1.58265,0,0,1.58265,5607.32,-1046.16)">
             <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(33,132,165);stroke:rgb(255,189,49);stroke-width:27.2px;stroke-linecap:square;stroke-linejoin:round;"/>
         </g>
-        <g id="lentimas-city" transform="matrix(1.58265,0,0,1.58265,4513.19,-1046.16)">
+        <g id="lentimas-town" transform="matrix(1.58265,0,0,1.58265,4513.19,-1046.16)">
             <circle cx="778.947" cy="1920.9" r="88.459" style="fill:rgb(33,132,165);stroke:rgb(255,189,49);stroke-width:27.2px;stroke-linecap:square;stroke-linejoin:round;"/>
         </g>
         <g id="humilau-city" transform="matrix(1.58265,0,0,1.58265,5940.95,-1974.28)">
@@ -216,7 +248,7 @@
         <g id="twist-mountain" transform="matrix(1.19972,0,0,1.27421,-5200.81,269.542)">
             <rect x="6206.21" y="1014.81" width="125.029" height="117.72" style="fill:rgb(0,132,66);stroke:rgb(148,198,33);stroke-width:22.45px;stroke-linecap:round;"/>
         </g>
-        <g id="mistralton-cave" transform="matrix(1.19972,0,0,1.27421,-5439.19,747.077)">
+        <g id="mistralton-cave_guidance-chamber" transform="matrix(1.19972,0,0,1.27421,-5439.19,747.077)">
             <rect x="6206.21" y="1014.81" width="125.029" height="117.72" style="fill:rgb(0,132,66);stroke:rgb(148,198,33);stroke-width:22.45px;stroke-linecap:round;"/>
         </g>
         <g id="chargestone-cave" transform="matrix(1.19972,0,0,1.27421,-6093.14,1012.85)">
@@ -225,7 +257,7 @@
         <g id="anville-town" transform="matrix(1.19972,0,0,1.27421,-7135.1,-474.11)">
             <rect x="6206.21" y="1014.81" width="125.029" height="117.72" style="fill:rgb(0,132,66);stroke:rgb(148,198,33);stroke-width:22.45px;stroke-linecap:round;"/>
         </g>
-        <g id="clay-tunnel" transform="matrix(1.19972,0,0,1.27421,-5199.4,931.847)">
+        <g id="clay-tunnel_underground-ruins_rocky-mountain-room_glacier-room_iron-room" transform="matrix(1.19972,0,0,1.27421,-5199.4,931.847)">
             <rect x="6206.21" y="1014.81" width="125.029" height="117.72" style="fill:rgb(0,132,66);stroke:rgb(148,198,33);stroke-width:22.45px;stroke-linecap:round;"/>
         </g>
         <g id="relic-castle" transform="matrix(1.19972,0,0,1.27421,-3920.44,1725.97)">

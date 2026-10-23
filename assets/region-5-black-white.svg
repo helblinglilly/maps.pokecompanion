@@ -44,7 +44,7 @@
         <g id="tubeline-bridge" transform="matrix(1,0,0,1,173.978,3.12639e-13)">
             <path d="M2799.59,1277.62L2862.41,1219.6L3337.44,1219.6L3392.53,1277.62" style="fill:none;stroke:rgb(255,189,49);stroke-width:55.56px;"/>
         </g>
-        <g id="unova-route-9" transform="matrix(1,0,0,1,173.978,3.12639e-13)">
+        <g id="unova-route-9_unova-shopping-mall" transform="matrix(1,0,0,1,173.978,3.12639e-13)">
             <path d="M3337.44,1219.6L3392.53,1277.62L3925.11,1277.62" style="fill:none;stroke:rgb(255,189,49);stroke-width:55.56px;"/>
         </g>
         <g id="unova-route-10" transform="matrix(1,0,0,1,173.978,3.12639e-13)">
@@ -197,7 +197,7 @@
         <g id="moor-of-icirrus" transform="matrix(0.630337,0,0,0.630337,-1357.93,-1661.27)">
             <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(0,132,66);stroke:rgb(148,198,33);stroke-width:50.68px;"/>
         </g>
-        <g id="unova-shopping-mall" transform="matrix(0.630337,0,0,0.630337,-497.385,-1272.38)">
+        <g id="challengers-cave" transform="matrix(0.630337,0,0,0.630337,-497.385,-1272.38)">
             <circle cx="6583.1" cy="4335.52" r="118.984" style="fill:rgb(0,132,66);stroke:rgb(148,198,33);stroke-width:50.68px;"/>
         </g>
         <g id="entralink_entree-forest" transform="matrix(0.630337,0,0,0.630337,-50.591,-734.282)">

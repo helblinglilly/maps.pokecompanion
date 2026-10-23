@@ -27,13 +27,18 @@
   {
     "region": "unova",
     "location": ["hidden-grotto"],
-    "reason": "BW2 Exclusive - Place name for the gaps between trees",
+    "reason": "BW2 Exclusive - Place name for the gaps between trees with no fixed location",
+    "versionGroups": ["black-white", "black-2-white-2"]
+  },
+  {
+    "region": "unova",
+    "location": ["nature-sanctuary"],
+    "reason": "BW2 Exclusive - \"Far from Unova\" and only accessible by plane after completing Pokédex",
     "versionGroups": ["black-white", "black-2-white-2"]
   },
   {
     "region": "unova",
     "location": [
-      "challengers-cave",
       "ns-castle",
       "undella-bay",
       "aspertia-city",
@@ -62,7 +67,6 @@
       "marine-tube",
       "virbank-gate",
       "aspertia-gate",
-      "nature-sanctuary",
       "medal-secretariat",
       "underground-ruins",
       "rocky-mountain-room",
@@ -77,13 +81,15 @@
   {
     "region": "unova",
     "location": [
+      "challengers-cave", // Removed from Route 9
       "entree-forest", // Removed
       "unova-route-10", // Destroyed
       "cold-storage", // Became PWT
       "unova-shopping-mall", // Still exists, but removed from map
       "unova-victory-road", // Replaced by unova-victory-road-2
+      "trial-chamber", // Lived on Pokemon League, which has been destroyed
     ],
-    "reason": "Part of Entra Link and inaccessible in BW2",
+    "reason": "Misc reasons for being removed",
     "versionGroups": ["black-2-white-2"],
     "reappearsIn": ["black-white"]
   }
