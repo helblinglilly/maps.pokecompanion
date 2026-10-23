@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Maps for Pokécompanion",
   description:
     "Demo app for open source, PokéAPI compatible svg maps of all Pokémon Regions",
+  icons: {
+    icon: { url: "/favicon.svg", type: "image/svg+xml" },
+  },
 };
 
 export default function RootLayout({

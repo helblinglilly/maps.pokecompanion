@@ -7,7 +7,10 @@ export const dynamic = "force-static";
 export default function Home() {
   return (
     <div className="grid gap-8">
-      <h1 className="text-2xl font-bold">Pokécompanion's Maps</h1>
+      <header className="flex items-center gap-3">
+        <img src="/favicon.svg" alt="" width={48} height={48} className="shrink-0" />
+        <h1 className="text-2xl font-bold">Pokécompanion's Maps</h1>
+      </header>
       <nav aria-label="Region maps" className="grid gap-8">
         {regions.map((region) => (
           <section key={region.id} className="grid gap-4">
