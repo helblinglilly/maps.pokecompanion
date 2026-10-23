@@ -8,7 +8,7 @@ For maps, please edit the Affinity files directly and then use the standard SVG 
 
 If you are adding entries to the locations-exclusions list, please leave a justification in the "reason" section - this may help future map makers!
 
-The Web App is intended to be used as a debugging tool - feel free to contribute whatever function you find useful.
+The Web App is intended to be used as a debugging tool - feel free to contribute whatever function you find useful. As it's a debugging tool, it's vibe coded.
 
 ## CI and deployment
 
