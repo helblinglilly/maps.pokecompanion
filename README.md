@@ -54,9 +54,9 @@ API failures fail CI rather than publishing misleading scores. Low scores are in
 | sinnoh | diamond-pearl | **Missing map** | ![diamond-pearl completeness](https://maps.pokecompanion.com/completeness/sinnoh-diamond-pearl.svg) |
 | sinnoh | platinum | **Missing map** | ![platinum completeness](https://maps.pokecompanion.com/completeness/sinnoh-platinum.svg) |
 | sinnoh | brilliant-diamond-shining-pearl | **Missing map** | ![brilliant-diamond-shining-pearl completeness](https://maps.pokecompanion.com/completeness/sinnoh-brilliant-diamond-shining-pearl.svg) |
-| unova | black-white | **Missing map** | ![black-white completeness](https://maps.pokecompanion.com/completeness/unova-black-white.svg) |
-| unova | black-2-white-2 | **Missing map** | ![black-2-white-2 completeness](https://maps.pokecompanion.com/completeness/unova-black-2-white-2.svg) |
-| kalos | x-y | **Missing map** | ![x-y completeness](https://maps.pokecompanion.com/completeness/kalos-x-y.svg) |
+| unova | black-white |  [region-5-black-white.svg](assets/region-5-black-white.svg) | ![black-white completeness](https://maps.pokecompanion.com/completeness/unova-black-white.svg) |
+| unova | black-2-white-2 | [region-5-black-2-white-2.svg](assets/region-5-black-2-white-2.svg) | ![black-2-white-2 completeness](https://maps.pokecompanion.com/completeness/unova-black-2-white-2.svg) |
+| kalos | x-y | [region-6-x-y.svg](assets/region-6-x-y.svg) | ![x-y completeness](https://maps.pokecompanion.com/completeness/kalos-x-y.svg) |
 | alola | sun-moon | **Missing map** | ![sun-moon completeness](https://maps.pokecompanion.com/completeness/alola-sun-moon.svg) |
 | alola | ultra-sun-ultra-moon | **Missing map** | ![ultra-sun-ultra-moon completeness](https://maps.pokecompanion.com/completeness/alola-ultra-sun-ultra-moon.svg) |
 | galar | sword-shield | **Missing map** | ![sword-shield completeness](https://maps.pokecompanion.com/completeness/galar-sword-shield.svg) |
