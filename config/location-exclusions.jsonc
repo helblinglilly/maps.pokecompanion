@@ -7,6 +7,27 @@
     "reappearsIn": ["firered-leafgreen"]
   },
   {
+    "region": "johto",
+    "location": [
+      "unknown-all-poliwag",
+      "unknown-all-rattata",
+      "unknown-all-bugs"
+    ],
+    "reason": "Placeholders where those Pokemon can be found in any water location",
+    "versionGroups": ["heartgold-soulsilver"]
+  },
+  {
+    "region": "johto",
+    "location": [
+      "ss-aqua", // Shown to the south between Johto and Kanto
+      "sinjoh-ruins", // Shown as off-map in the north
+      "pokewalker", // Pokémon that can only be caught on the Pokéwalker
+      "roaming-johto", // No fixed location
+    ],
+    "reason": "Placeholders where those Pokemon can be found in any water location",
+    "versionGroups": ["heartgold-soulsilver"]
+  },
+  {
     "region": "unova",
     "location": ["unova-mystery-zone"],
     "reason": "Placeholder for events",

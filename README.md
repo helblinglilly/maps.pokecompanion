@@ -47,7 +47,7 @@ API failures fail CI rather than publishing misleading scores. Low scores are in
 | kanto | lets-go-pikachu-lets-go-eevee | **Missing map** | ![lets-go-pikachu-lets-go-eevee completeness](https://maps.pokecompanion.com/completeness/kanto-lets-go-pikachu-lets-go-eevee.svg) |
 | johto | gold-silver | **Missing map** | ![gold-silver completeness](https://maps.pokecompanion.com/completeness/johto-gold-silver.svg) |
 | johto | crystal | **Missing map** | ![crystal completeness](https://maps.pokecompanion.com/completeness/johto-crystal.svg) |
-| johto | heartgold-soulsilver | **Missing map** | ![heartgold-soulsilver completeness](https://maps.pokecompanion.com/completeness/johto-heartgold-soulsilver.svg) |
+| johto | heartgold-soulsilver | [region-2-heartgold-soulsilver.svg](assets/region-2-heartgold-soulsilver.svg) | ![heartgold-soulsilver completeness](https://maps.pokecompanion.com/completeness/johto-heartgold-soulsilver.svg) |
 | hoenn | ruby-sapphire | **Missing map** | ![ruby-sapphire completeness](https://maps.pokecompanion.com/completeness/hoenn-ruby-sapphire.svg) |
 | hoenn | emerald | **Missing map** | ![emerald completeness](https://maps.pokecompanion.com/completeness/hoenn-emerald.svg) |
 | hoenn | omega-ruby-alpha-sapphire | **Missing map** | ![omega-ruby-alpha-sapphire completeness](https://maps.pokecompanion.com/completeness/hoenn-omega-ruby-alpha-sapphire.svg) |

@@ -50,6 +50,7 @@ export function MapStyleWorkspace({
   const [workspaceSplit, setWorkspaceSplit] = useState(35);
   const [sidebarSplit, setSidebarSplit] = useState(55);
   const [collapsed, setCollapsed] = useState(false);
+  const [editorHidden, setEditorHidden] = useState(false);
 
   return (
     <MapCssContext.Provider value={css}>
@@ -58,13 +59,22 @@ export function MapStyleWorkspace({
         style={{ "--workspace-split": `${workspaceSplit}%` } as CSSProperties}
       >
         <div className="map-workspace-sidebar">
+          <button
+            type="button"
+            aria-expanded={!editorHidden}
+            aria-controls="map-css-panel"
+            onClick={() => setEditorHidden((hidden) => !hidden)}
+            className="shrink-0 self-end rounded px-2 py-1 text-sm underline focus-visible:outline-2 focus-visible:outline-green-700"
+          >
+            {editorHidden ? "Show Custom CSS" : "Hide Custom CSS"}
+          </button>
           <div
             className="min-h-0 min-w-0 overflow-hidden"
-            style={{ flex: collapsed ? 1 : `${sidebarSplit} 1 0` }}
+            style={{ flex: collapsed || editorHidden ? 1 : `${sidebarSplit} 1 0` }}
           >
             {sidebar}
           </div>
-          {!collapsed && (
+          {!collapsed && !editorHidden && (
             <ResizeHandle
               label="Resize locations and CSS panels"
               value={sidebarSplit}
@@ -77,6 +87,7 @@ export function MapStyleWorkspace({
             collapsed={collapsed}
             onToggle={() => setCollapsed(!collapsed)}
             size={100 - sidebarSplit}
+            hidden={editorHidden}
           />
         </div>
         <ResizeHandle
@@ -97,18 +108,22 @@ function MapStyleEditor({
   collapsed,
   onToggle,
   size,
+  hidden,
 }: {
   css: string;
   onChange: (css: string) => void;
   collapsed: boolean;
   onToggle: () => void;
   size: number;
+  hidden: boolean;
 }) {
   return (
     <section
+      id="map-css-panel"
+      hidden={hidden}
       aria-labelledby="map-css-heading"
       className="flex min-h-0 flex-col overflow-hidden rounded-lg border border-[#d7dfd5] bg-white p-5"
-      style={{ flex: collapsed ? "0 0 auto" : `${size} 1 0` }}
+      style={{ display: hidden ? "none" : undefined, flex: collapsed ? "0 0 auto" : `${size} 1 0` }}
     >
       <div className="flex items-center justify-between gap-3">
         <h2 id="map-css-heading" className="text-lg font-semibold">

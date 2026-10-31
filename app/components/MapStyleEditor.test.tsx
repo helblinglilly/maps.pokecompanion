@@ -37,6 +37,26 @@ it("updates and resets CSS inside the artwork while preserving selection and zoo
   expect(screen.getByRole("textbox", { name: "Map CSS" })).toHaveValue(defaultMapCss);
 });
 
+it("hides the entire CSS panel while keeping edits applied to the map", () => {
+  render(
+    <MapStyleWorkspace sidebar={<p>Locations</p>}>
+      <MapArtwork label="Kanto" markup="<svg />" />
+    </MapStyleWorkspace>,
+  );
+  const css = "svg { opacity: .5; }";
+  fireEvent.change(screen.getByRole("textbox", { name: "Map CSS" }), { target: { value: css } });
+  fireEvent.click(screen.getByRole("button", { name: "Hide Custom CSS" }));
+  expect(screen.queryByRole("region", { name: "Custom CSS" })).toBeNull();
+  expect(screen.queryByRole("button", { name: "Reset CSS" })).toBeNull();
+  expect(screen.queryByRole("separator", { name: "Resize locations and CSS panels" })).toBeNull();
+  expect(screen.getByRole("img", { name: "Kanto" }).shadowRoot!.querySelectorAll("style")[1].textContent).toBe(css);
+  const show = screen.getByRole("button", { name: "Show Custom CSS" });
+  expect(show).toHaveAttribute("aria-expanded", "false");
+  fireEvent.click(show);
+  expect(screen.getByRole("textbox", { name: "Map CSS" })).toHaveValue(css);
+  expect(screen.getByRole("separator", { name: "Resize locations and CSS panels" })).toBeInTheDocument();
+});
+
 it("collapses CSS without losing edits and resizes both panel splits with the keyboard", () => {
   render(<MapStyleWorkspace sidebar={<p>Locations</p>}><p>Map</p></MapStyleWorkspace>);
   fireEvent.change(screen.getByRole("textbox", { name: "Map CSS" }), { target: { value: "svg { opacity: .5; }" } });

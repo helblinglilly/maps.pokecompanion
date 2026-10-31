@@ -5,6 +5,9 @@ export const mapAssets: Record<number, Record<string, string>> = {
     yellow: "region-1-red-blue-yellow.svg",
     "firered-leafgreen": "region-1-firered-leafgreen.svg",
   },
+  2: {
+    "heartgold-soulsilver": "region-2-heartgold-soulsilver.svg",
+  },
   5: {
     "black-white": "region-5-black-white.svg",
     "black-2-white-2": "region-5-black-2-white-2.svg",
