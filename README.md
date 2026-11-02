@@ -43,7 +43,7 @@ API failures fail CI rather than publishing misleading scores. Low scores are in
 | kanto | gold-silver | **Missing map** | ![gold-silver completeness](https://maps.pokecompanion.com/completeness/kanto-gold-silver.svg) |
 | kanto | crystal | **Missing map** | ![crystal completeness](https://maps.pokecompanion.com/completeness/kanto-crystal.svg) |
 | kanto | firered-leafgreen | [region-1-firered-leafgreen.svg](assets/region-1-firered-leafgreen.svg) | ![firered-leafgreen completeness](https://maps.pokecompanion.com/completeness/kanto-firered-leafgreen.svg) |
-| kanto | heartgold-soulsilver | **Missing map** | ![heartgold-soulsilver completeness](https://maps.pokecompanion.com/completeness/kanto-heartgold-soulsilver.svg) |
+| kanto | heartgold-soulsilver |[region-1-heartgold-soulsilver.svg](assets/region-1-heartgold-soulsilver.svg) | ![heartgold-soulsilver completeness](https://maps.pokecompanion.com/completeness/kanto-heartgold-soulsilver.svg) |
 | kanto | lets-go-pikachu-lets-go-eevee | **Missing map** | ![lets-go-pikachu-lets-go-eevee completeness](https://maps.pokecompanion.com/completeness/kanto-lets-go-pikachu-lets-go-eevee.svg) |
 | johto | gold-silver | **Missing map** | ![gold-silver completeness](https://maps.pokecompanion.com/completeness/johto-gold-silver.svg) |
 | johto | crystal | **Missing map** | ![crystal completeness](https://maps.pokecompanion.com/completeness/johto-crystal.svg) |
