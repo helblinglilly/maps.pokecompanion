@@ -53,7 +53,7 @@ API failures fail CI rather than publishing misleading scores. Low scores are in
 | hoenn | omega-ruby-alpha-sapphire | **Missing map** | ![omega-ruby-alpha-sapphire completeness](https://maps.pokecompanion.com/completeness/hoenn-omega-ruby-alpha-sapphire.svg) |
 | sinnoh | diamond-pearl | **Missing map** | ![diamond-pearl completeness](https://maps.pokecompanion.com/completeness/sinnoh-diamond-pearl.svg) |
 | sinnoh | platinum | **Missing map** | ![platinum completeness](https://maps.pokecompanion.com/completeness/sinnoh-platinum.svg) |
-| sinnoh | brilliant-diamond-shining-pearl | **Missing map** | ![brilliant-diamond-shining-pearl completeness](https://maps.pokecompanion.com/completeness/sinnoh-brilliant-diamond-shining-pearl.svg) |
+| sinnoh | brilliant-diamond-shining-pearl | [region-4-brilliant-diamond-shining-pearl.svg](assets/region-4-brilliant-diamond-shining-pearl.svg)| ![brilliant-diamond-shining-pearl completeness](https://maps.pokecompanion.com/completeness/sinnoh-brilliant-diamond-shining-pearl.svg) |
 | unova | black-white |  [region-5-black-white.svg](assets/region-5-black-white.svg) | ![black-white completeness](https://maps.pokecompanion.com/completeness/unova-black-white.svg) |
 | unova | black-2-white-2 | [region-5-black-2-white-2.svg](assets/region-5-black-2-white-2.svg) | ![black-2-white-2 completeness](https://maps.pokecompanion.com/completeness/unova-black-2-white-2.svg) |
 | kalos | x-y | [region-6-x-y.svg](assets/region-6-x-y.svg) | ![x-y completeness](https://maps.pokecompanion.com/completeness/kalos-x-y.svg) |
