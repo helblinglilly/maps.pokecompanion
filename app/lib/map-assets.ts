@@ -9,6 +9,9 @@ export const mapAssets: Record<number, Record<string, string>> = {
   2: {
     "heartgold-soulsilver": "region-2-heartgold-soulsilver.svg",
   },
+  3: {
+    "omega-ruby-alpha-sapphire": "region-3-omega-ruby-alpha-sapphire.svg",
+  },
   4: {
     "brilliant-diamond-shining-pearl": "region-4-brilliant-diamond-shining-pearl.svg",
   },
