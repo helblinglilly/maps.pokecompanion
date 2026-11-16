@@ -17,6 +17,7 @@ it("updates and resets CSS inside the artwork while preserving selection and zoo
   );
   const artwork = screen.getByRole("img", { name: "Kanto" });
   const root = artwork.shadowRoot!;
+  fireEvent.click(screen.getByRole("button", { name: "Custom CSS" }));
   expect(screen.getByRole("textbox", { name: "Map CSS" })).toHaveValue(defaultMapCss);
   expect(root.querySelectorAll("style")[1].textContent).toBe(defaultMapCss);
   expect(root.querySelector("#pallet-town")).toHaveClass("highlighted");
@@ -44,6 +45,7 @@ it("hides the entire CSS panel while keeping edits applied to the map", () => {
     </MapStyleWorkspace>,
   );
   const css = "svg { opacity: .5; }";
+  fireEvent.click(screen.getByRole("button", { name: "Custom CSS" }));
   fireEvent.change(screen.getByRole("textbox", { name: "Map CSS" }), { target: { value: css } });
   fireEvent.click(screen.getByRole("button", { name: "Hide Custom CSS" }));
   expect(screen.queryByRole("region", { name: "Custom CSS" })).toBeNull();
@@ -59,8 +61,12 @@ it("hides the entire CSS panel while keeping edits applied to the map", () => {
 
 it("collapses CSS without losing edits and resizes both panel splits with the keyboard", () => {
   render(<MapStyleWorkspace sidebar={<p>Locations</p>}><p>Map</p></MapStyleWorkspace>);
-  fireEvent.change(screen.getByRole("textbox", { name: "Map CSS" }), { target: { value: "svg { opacity: .5; }" } });
   const toggle = screen.getByRole("button", { name: "Custom CSS" });
+  expect(toggle).toHaveAttribute("aria-expanded", "false");
+  expect(screen.queryByRole("textbox", { name: "Map CSS" })).toBeNull();
+  expect(screen.queryByRole("separator", { name: "Resize locations and CSS panels" })).toBeNull();
+  fireEvent.click(toggle);
+  fireEvent.change(screen.getByRole("textbox", { name: "Map CSS" }), { target: { value: "svg { opacity: .5; }" } });
   fireEvent.click(toggle);
   expect(toggle).toHaveAttribute("aria-expanded", "false");
   expect(screen.queryByRole("textbox", { name: "Map CSS" })).toBeNull();

@@ -49,7 +49,7 @@ export function MapStyleWorkspace({
 
   const [workspaceSplit, setWorkspaceSplit] = useState(35);
   const [sidebarSplit, setSidebarSplit] = useState(55);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const [editorHidden, setEditorHidden] = useState(false);
 
   return (
